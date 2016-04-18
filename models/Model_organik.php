@@ -80,17 +80,24 @@ class Model_organik extends CI_Model {
 	$d['agama'] = $this->input->post('agama');
 	$d['status'] = $this->input->post('status');
 	$d['jml_keluarga'] = $this->input->post('jml_keluarga');
-	$d['tgl_masuk'] = $this->input->post('tgl_masuk');
-	$d['tgl_angkat'] = $this->input->post('tgl_angkat');
-	$this->db->where('tbl_pegawai.id_peg', $id);
-	$this->db->where('tbl_pegawai.id_peg = tb_pegawai_organik.id_peg');
-	$this->db->update('tbl_pegawai, tb_pegawai_organik', $d);
+	$d2['tgl_masuk'] = $this->input->post('tgl_masuk');
+	$d2['tgl_angkat'] = $this->input->post('tgl_angkat');	
+	
+	$this->db->where('id_peg', $id);
+	$this->db->update('tbl_pegawai', $d);
 	
 	if($this->db->affected_rows() > 0) {
-		return TRUE;
+		$this->db->where('id_peg', $id);
+		$this->db->update('tb_pegawai_organik', $d2);	
+		if($this->db->affected_rows() > 0) {
+			return TRUE;	
+		}
 	} else {
 		return FALSE;
-	}	
+	}
+
+	
+	
  }
  
  // Delete data pegawai
