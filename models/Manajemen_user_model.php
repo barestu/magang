@@ -26,11 +26,13 @@ public function form_edit() {
 
  }
 public function proc_edit() {
-			$id = $this->input->post("id_user_login");		
-		$pass['password'] = md5($this->input->post("password"));
+		$id = $this->input->post("id_user_login");		
+		$passlama = md5($this->input->post("password"));
 
- 			$this->db->where('password', $pass['password']);
- 			$query=$this->db->get_where("tbl_user_login");
+			$this->db->select('password');
+			$this->db->from('tbl_user_login');
+ 			$this->db->where('password', $passlama);
+ 			$query = $this->db->get();
 			
 			if ($query->num_rows() > 0){
 				$input['username'] = $this->input->post("username");

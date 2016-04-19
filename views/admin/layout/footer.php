@@ -6,7 +6,9 @@
     <!-- plugins -->
     <script src="<?php echo base_url(); ?>asset/js/plugins/moment.min.js"></script>
     <script src="<?php echo base_url(); ?>asset/js/plugins/fullcalendar.min.js"></script>
-    <script src="<?php echo base_url(); ?>asset/js/plugins/jquery.nicescroll.js"></script>
+    <script src="<?php echo base_url(); ?>asset/js/plugins/jquery.nicescroll.js"></script>	
+	<script src="<?php echo base_url(); ?>asset/js/plugins/jquery.datatables.min.js"></script>
+	<script src="<?php echo base_url(); ?>asset/js/plugins/datatables.bootstrap.min.js"></script>
 	
 	<!-- buat logout -->
 	<div id="content">
@@ -34,7 +36,10 @@
     <!-- custom -->
      <script src="<?php echo base_url(); ?>asset/js/main.js"></script>
      <script type="text/javascript">
-	 
+		$(document).ready(function(){
+			$('#datatables-example').DataTable();
+		});
+		
         // start: Calendar =========
          $('.dashboard .calendar').fullCalendar({
             header: {
