@@ -46,13 +46,5 @@ class Master_kompetensi extends CI_Controller {
 			echo "<script>alert('Data gagal dihapus!');history.go(-1);</script>";
 		}
 	}
-	public function logout() {
-		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('level');
-		session_destroy();
-		redirect('login');
-	}
-	
-
 }
 ?>
