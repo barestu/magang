@@ -11,29 +11,50 @@ class Manajemen_user_model extends CI_Model {
  return $query;
  }
 
- public function form() {
+ public function form_input() {
 
 	$query = $this->db->query("SELECT MAX(id_user_login) AS max  FROM tbl_user_login");
 	return $query; 
 
  }
 
-public function form_edit() {
-			$where = $this->input->get();
+ public function proc_input() {
+		$input['id_user_login'] = $this->input->post("id_user_login");
+		$input['username'] = $this->input->post("username");
+		$input['password'] = md5($this->input->post("password"));
+		$input['email'] = $this->input->post("email");
+		$input['nip'] = $this->input->post("nip");
+		$input['level'] = $this->input->post("level");			
+		
+ 		$this->db->insert("tbl_user_login",$input);
 
-			$query = $this->db->get_where("tbl_user_login",$where);
+ 		if($this->db->affected_rows() > 0) {
+			return TRUE;		
+		} else {
+		return FALSE;
+		}
+
+ }
+
+public function form_edit() {
+	$where = $this->input->get('id');
+			$this->db->select('*');
+ 			$this->db->from('tbl_user_login');
+  			$this->db->where('id_user_login', $where);
+  			$query = $this->db->get();
 	return $query;
 
  }
 public function proc_edit() {
 			$id = $this->input->post("id_user_login");		
-		$pass['password'] = md5($this->input->post("password"));
+			$passlama = md5($this->input->post("password"));
 
- 			$this->db->where('password', $pass['password']);
- 			$query=$this->db->get_where("tbl_user_login");
-			
+ 			$this->db->select('*');
+ 			$this->db->from('tbl_user_login');
+  			$this->db->where('password', $passlama);
+  			$query = $this->db->get();  					
 			if ($query->num_rows() > 0){
-				$input['username'] = $this->input->post("username");
+				$input['username'] = $this->input->post("username");				
 				$input['email'] = $this->input->post("email");
 				$input['nip'] = $this->input->post("nip");
 				$input['level'] = $this->input->post("level");
@@ -41,13 +62,24 @@ public function proc_edit() {
 			
 				$this->db->where('id_user_login', $id);        
 				$this->db->update("tbl_user_login",$input);
-				}		 
-				return $query;
+				if($this->db->affected_rows() == 1) {
+					return TRUE; }					
+				}
+			else {
+				return FALSE;
+					}			
+						 
+				
  			} 			 
 public function delete($id){
 	
   $this->db->where('id_user_login', $id);
   $this->db->delete('tbl_user_login');
+  if($this->db->affected_rows() == 1) {
+			return TRUE;		
+	} else {
+		return FALSE;
+	}
 }
 
 
