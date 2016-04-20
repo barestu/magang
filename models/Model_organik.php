@@ -94,10 +94,7 @@ class Model_organik extends CI_Model {
 		}
 	} else {
 		return FALSE;
-	}
-
-	
-	
+	}	
  }
  
  // Delete data pegawai
