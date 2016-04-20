@@ -25,10 +25,14 @@
                           <div class="col-md-10">                            
                             
                             <div class="form-group"><label class="col-sm-2 control-label text-right">Username</label>
-                              <div class="col-sm-4"><input type="text" name="username" maxlength="20" class="form-control" value="<?php echo $row['username'] ?>" required ></div>
+                              <div class="col-sm-4"><input type="text" name="username" maxlength="20" class="form-control" value="<?php echo $row['username'] ?>" <?php 
+                              if($row['username'] == $username){ 
+                              echo "readonly title='Ubah username di pengaturan akun' style='cursor:no-drop' "; }
+                              else{ echo "required"; }
+                                ?> ></div>
                             </div>
                             <div class="form-group"><label class="col-sm-2 control-label text-right">Password Lama</label>
-                              <div class="col-sm-4"><input type="password" maxlength="20" class="form-control" pattern=".{6,}" title="6 atau lebih karakter" required ></div>
+                              <div class="col-sm-4"><input type="password" name="password" maxlength="20" class="form-control" pattern=".{6,}" title="6 atau lebih karakter" required ></div>
                             </div>
                             <div class="form-group"><label class="col-sm-2 control-label text-right">Password Baru</label>
                               <div class="col-sm-4"><input type="password" maxlength="20" class="form-control" pattern=".{6,}" title="6 atau lebih karakter" id="txtPassword" required ></div>

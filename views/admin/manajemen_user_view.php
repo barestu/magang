@@ -1,4 +1,4 @@
-    <div class="kontent" id="content">
+<div class="kontent" id="content">
   
     <div class="panel box-shadow-none content-header">
           <div class="panel-body">
@@ -55,7 +55,7 @@
                     <span class='fa fa-angle-down'></span>
                   </button>
                   <ul class='dropdown-menu'>"?>
-                  <li><a href="<?php echo base_url(); ?>admin/Manajemen_user/form_edit/<?php echo $row['id_user_login']; ?>">Edit</a></li>
+                  <li><a href="<?php echo base_url(); ?>admin/Manajemen_user/form_edit?id=<?php echo $row['id_user_login']; ?>">Edit</a></li>
                   <li><a href="<?php echo base_url(); ?>admin/Manajemen_user/form_delete/<?php echo $row['id_user_login']; ?>">Delete</a></li>
                   </ul>
                 </div>
