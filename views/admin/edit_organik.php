@@ -5,7 +5,7 @@
 			<div class="col-md-12">
 				<h3 class="animated fadeInLeft">Data Pegawai Organik</h3>
 				<p class="animated fadeInDown">
-				  Data Pegawai <span class="fa-angle-right fa"></span> Isi Data Pegawai Organik 
+				  Data Pegawai <span class="fa-angle-right fa"></span> Update Data Pegawai Organik 
 				</p>
 			</div>
 		  </div>
@@ -15,7 +15,7 @@
 			<div class="col-md-20">
 			  <div class="panel form-element-padding">
 				<div class="panel-heading">
-				 <h4>Form Pengisian</h4>
+				 <h4>Form Update</h4>
 				</div>
 				 <div class="panel-body" style="padding-bottom:30px;">
 				  <div class="col-md-10">
@@ -66,7 +66,7 @@
 					  <div class="col-sm-4"><input type="date" name="tgl_masuk" maxlength="20" value="<?php echo $row['tgl_masuk']?>" class="form-control" required ></div>                            
 					</div>
 					<div class="form-group"><label class="col-sm-2 control-label text-right">Tanggal Angkat</label>
-					  <div class="col-sm-4"><input type="date" name="tgl_angkat" maxlength="20" value="<?php echo $row['tgl_masuk']?>" class="form-control" required ></div>
+					  <div class="col-sm-4"><input type="date" name="tgl_angkat" maxlength="20" value="<?php echo $row['tgl_angkat']?>" class="form-control" required ></div>
 					</div>                            
 					<div class="form-group"><label class="col-sm-2 control-label text-right">Alamat</label>
 					  <div class="col-sm-10"><textarea name="alamat" cols="40" rows="3" class="form-control" required><?php echo $row['alamat']?></textarea></div>
@@ -82,7 +82,7 @@
 					  <div class="col-sm-4"><input type="email" name="email2" maxlength="50" placeholder="..@example.com" value="<?php echo $row['email2']?>" class="form-control"></div>
 					</div>
 					<div class="form-group"><label class="col-sm-2 control-label text-right">Tempat Lahir</label>
-					  <div class="col-sm-3"><input type="text" name="tempat_lahir" maxlength="20" value="<?php echo $row['tempat_lahir']?>" class="form-control" required></div>
+					  <div class="col-sm-4"><input type="text" name="tempat_lahir" maxlength="20" value="<?php echo $row['tempat_lahir']?>" class="form-control" required></div>
 					</div>
 					<div class="form-group"><label class="col-sm-2 control-label text-right">Tanggal Lahir</label>
 					  <div class="col-sm-4"><input type="date" name="tgl_lahir" maxlength="20" value="<?php echo $row['tgl_lahir']?>" class="form-control" required></div>
