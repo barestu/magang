@@ -50,6 +50,7 @@ class Pegawai_organik extends CI_Controller {
 	// EDIT
 	public function edit() {
 		$id = $this->input->get('id');
+		
 		$data = array('title'=>'SIPEG', 
 				'isi'=>'admin/edit_organik',
 				'username'=>$this->session->userdata('username'));
@@ -65,9 +66,9 @@ class Pegawai_organik extends CI_Controller {
 		$id = $this->input->get('id');
 		$edit = $this->model_organik->editData($id);
 		
-		if ($edit === TRUE) {
+		if ($edit == TRUE) {
 			echo "<script>alert('Data berhasil diperbaharui!');history.go(-2);</script>";
-		} elseif ($edit === FALSE) {
+		} elseif ($edit == FALSE) {
 			echo "<script>alert('Data gagal diperbaharui!');history.go(-1);</script>";
 		}
 	}
