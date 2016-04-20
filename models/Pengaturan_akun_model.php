@@ -12,7 +12,7 @@ public function proc_edit_password() {
  			$this->db->from('tbl_user_login');
   			$this->db->where('password', $passlama);
   			$query = $this->db->get();  					
-			if ($query->num_rows() == 1){							
+			if ($query->num_rows() > 0){							
 				$input['password'] = md5($this->input->post("passwordbaru"));
 			
 				$this->db->where('id_user_login', $id_user_login);        
