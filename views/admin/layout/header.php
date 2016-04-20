@@ -1,4 +1,5 @@
 <!-- start: Header -->
+<body id="mimin" class="dashboard">
         <nav class="navbar navbar-default header navbar-fixed-top">
           <div class="col-md-12 nav-wrapper">
             <div class="navbar-header" style="width:100%;">
@@ -7,7 +8,7 @@
                 <span class="middle"></span>
                 <span class="bottom"></span>
               </div>
-                <a href="<?php echo base_url() ?>admin/dashboard" class="navbar-brand"> 
+                <a href="<?php echo base_url() ?>admin/Dashboard" class="navbar-brand"> 
                  <b>SIPEG</b>
                 </a>
 
@@ -25,17 +26,13 @@
               </ul>
 
               <ul class="nav navbar-nav navbar-right user-nav">
-                <li class="user-name"><span>Welcome</span></li>
+                <li class="user-name"><span>Selamat Datang, <?php echo $username; ?></span></li>
                   <li class="dropdown avatar-dropdown">
                    <img src="<?php echo base_url() ?>asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
-                     <li class="more">
-                      <ul>
-                        <li><a href=""><span class="fa fa-cogs"></span></a></li>
-                        <li><a href=""><span class="fa fa-lock"></span></a></li>
-                        <li><a href=""><span class="fa fa-power-off "></span></a></li>
-                      </ul>
-                    </li>
+                      <li><a href="<?php echo base_url(); ?>admin/Pengaturan_akun"><span  class="fa fa-wrench "></span>  Pengaturan Akun</a></li>
+                      <li><a href="<?php echo base_url(); ?>admin/Manajemen_user"><span class="fa fa-database"></span>  Manajemen User</a></li>
+                      <li role="separator" class="divider"></li>
                   </ul>
                 </li>
                 <li ><a <span class="fa fa-power-off" data-toggle="modal" data-target="#myModal"></span></a></li>

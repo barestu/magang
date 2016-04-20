@@ -1,5 +1,4 @@
 <?php
-
 class Manajemen_user extends CI_Controller {
 
 	public function __construct() {
@@ -21,27 +20,20 @@ class Manajemen_user extends CI_Controller {
 	public function form_input() {				
 		$isi = array('title' => 'SIPEG',
  			'isi' => 'admin/input_manajemen_user_view',
- 			'id' => $this->Manajemen_user_model->form(),
+ 			'id' => $this->Manajemen_user_model->form_input(),
  			'username' => $this->session->userdata('username'));
 		
  		$this->load->view('admin/layout/wrapper',$isi);
 	}
-	public function proc_input() {	
+	public function proc_input() {			
+ 		$input=$this->Manajemen_user_model->proc_input();
 
-		$input['id_user_login'] = $this->input->post("id_user_login");
-		$input['username'] = $this->input->post("username");
-		$input['password'] = md5($this->input->post("password"));
-		$input['email'] = $this->input->post("email");
-		$input['nip'] = $this->input->post("nip");
-		$input['level'] = $this->input->post("level");			
-		
- 		$this->db->insert("tbl_user_login",$input);
- 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/manajemen_user_view',
- 			'user' => $this->Manajemen_user_model->tabel_user(),
- 			'username' => $this->session->userdata('username'));
-		
- 		$this->load->view('admin/layout/wrapper',$isi);
+ 		if ($input == TRUE) {
+			echo "<script>alert('Data berhasil ditambah!');history.go(-2);</script>";
+		} elseif ($input == FALSE) {
+			echo "<script>alert('Data gagal ditambah!');history.go(-1);</script>";
+		}
+
 	}
 	public function form_edit() {				
 		$isi = array('title' => 'SIPEG',
@@ -51,37 +43,25 @@ class Manajemen_user extends CI_Controller {
 		
  		$this->load->view('admin/layout/wrapper',$isi);
 	}
-	public function proc_edit() {			
-						
-			$this->load->model("Manajemen_user_model");
-			$this->Manajemen_user_model->proc_edit();
-		
- 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/manajemen_user_view',
- 			'coba' => $this->Manajemen_user_model->proc_edit(), 			
- 			'username' => $this->session->userdata('username'));
-		
- 		$this->load->view('admin/layout/wrapper',$isi);
+	public function proc_edit() {								
+			$edit=$this->Manajemen_user_model->proc_edit();
+
+			if ($edit == TRUE) {
+			echo "<script>alert('Data berhasil diubah!');history.go(-2);</script>";
+			} elseif ($edit == FALSE) {
+			echo "<script>alert('Data gagal diubah!');history.go(-1);</script>";
+			}		
 	}
 	public function form_delete($id_user_login) {
 			$id = $this->input->get();
 			$this->load->model("Manajemen_user_model",$id);
-    		$this->Manajemen_user_model->delete($id_user_login); 
+    		$delete = $this->Manajemen_user_model->delete($id_user_login); 
 
-			$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/manajemen_user_view',
- 			'user' => $this->Manajemen_user_model->tabel_user(),
- 			'username' => $this->session->userdata('username'));
-		
- 		$this->load->view('admin/layout/wrapper',$isi);
+			if ($delete == TRUE) {
+			echo "<script>alert('Data berhasil dihapus!');history.go(-1);</script>";
+		} elseif ($delete == FALSE) {
+			echo "<script>alert('Data gagal dihapus!');history.go(-1);</script>";
+		}
 	}
-	public function logout() {
-		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('level');
-		session_destroy();
-		redirect('login');
-	}
-	
-
 }
 ?>

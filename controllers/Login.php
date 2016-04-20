@@ -17,13 +17,14 @@ class Login extends CI_Controller {
 				$sess_data['logged_in'] = 'Sudah Login';
 				$sess_data['username'] = $sess->username;
 				$sess_data['level'] = $sess->level;
+				$sess_data['id_user_login'] = $sess->id_user_login;
 				$this->session->set_userdata($sess_data);
 			}
 			if ($this->session->userdata('level')=='admin') {
-				redirect('admin/dashboard');
+				redirect('admin/Dashboard');
 			}
 			elseif ($this->session->userdata('level')=='user') {
-				redirect('user/dashboard');
+				redirect('user/Dashboard');
 			}		
 		}
 		else {
