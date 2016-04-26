@@ -4,10 +4,10 @@
           <div class="panel-body">
             <div class="col-md-12">
         <h3 class="animated fadeInLeft">
-          <span class="icon-people"></span> Notifikasi Pegawai 
+          <span class="icon-note"></span> Kontrak Pegawai 
         </h3>
               <p class="animated fadeInDown">
-                Administrator <span class="fa-angle-right fa"></span> Notifikasi Kontrak Pegawai PKWT 
+                Notifikasi Pegawai <span class="fa-angle-right fa"></span> Kontrak Pegawai 
               </p>
             </div>
           </div>
@@ -25,8 +25,8 @@
                           <th>NIP</th>
               <th class="col-md-4">Nama</th>
                           <th>Status Pegawai</th>
-                          <th>Tanggal Berakhir Kontrak</th>              
-              <th>Selisih Jatuh Tempo</th>
+                          <th>Berakhir Kontrak</th>              
+              <th>Jatuh Tempo</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
