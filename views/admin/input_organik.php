@@ -82,7 +82,7 @@
 					  <div class="col-sm-4"><input type="email" name="email2" maxlength="50" placeholder="..@example.com" class="form-control"></div>
 					</div>
 					<div class="form-group"><label class="col-sm-2 control-label text-right">Tempat Lahir</label>
-					  <div class="col-sm-3"><input type="text" name="tempat_lahir" maxlength="20" class="form-control" required></div>
+					  <div class="col-sm-4"><input type="text" name="tempat_lahir" maxlength="20" class="form-control" required></div>
 					</div>
 					<div class="form-group"><label class="col-sm-2 control-label text-right">Tanggal Lahir</label>
 					  <div class="col-sm-4"><input type="date" name="tgl_lahir" maxlength="20" class="form-control" required></div>

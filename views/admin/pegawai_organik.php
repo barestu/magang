@@ -55,7 +55,7 @@
 							  <span class='fa fa-angle-down'></span>
 							</button>
 							<ul class='dropdown-menu'>
-							  <li><a href='#'>Detail</a></li>
+							  <li><a href='<?php echo base_url()?>admin/data_organik?id=<?php echo $row['id_peg']?>'>Detail</a></li>
 							  <li><a href='<?php echo base_url()?>admin/pegawai_organik/edit?id=<?php echo $row['id_peg']?>'>Edit</a></li>
 							  <li><a href='<?php echo base_url()?>admin/pegawai_organik/proc_delete?id=<?php echo $row['id_peg']?>'>Delete</a></li>
 							</ul>
