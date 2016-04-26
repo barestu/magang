@@ -8,11 +8,14 @@ class Dashboard extends CI_Controller {
 			redirect('login');
 		}
 		$this->load->helper('text');
+		$this->load->model('Dashboard_model');
 	}
-	public function index() {								
+	public function index() {
+		$this->session->unset_userdata('notifikasi');								
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/dashboard_view'
- 			,'username' => $this->session->userdata('username'));
+ 			'isi' => 'admin/dashboard_view',
+ 			'notifikasi' => $this->Dashboard_model->notifikasi(),
+ 			'username' => $this->session->userdata('username'));
 		
  		$this->load->view('admin/layout/wrapper',$isi);
 	}
@@ -21,6 +24,7 @@ class Dashboard extends CI_Controller {
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('level');
 		$this->session->unset_userdata('id_user_login');
+		$this->session->unset_userdata('notifikasi');
 		session_destroy();
 		redirect('login');
 	}
