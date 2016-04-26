@@ -278,8 +278,8 @@
 									<span class='fa fa-angle-down'></span>
 								  </button>
 								  <ul class='dropdown-menu'>
-									<li><a href='proc_form_data_delete_mutasi.php?id=$row[id_peg]&id_mut=$row_mut[id_mut]'>Delete</a></li>
-									<li><a href='form_data_edit_mutasi.php?id_mut=$row_mut[id_mut]'>Edit</a></li>
+									<li><a href='<?php echo base_url()?>admin/data_mutasi/edit_mutasi?id=<?php echo $dm['id_mut']?>'>Edit</a></li>
+									<li><a href='<?php echo base_url()?>admin/data_mutasi/proc_delete_mutasi?id=<?php echo $dm['id_mut']?>'>Delete</a></li>
 								  </ul>
 								</div>
 						  </tr>
@@ -290,7 +290,7 @@
 					  </table>
 				  </div>
 				  
-				  <button type="button" class="btn btn-info right" onclick="location.href='?id=<?php echo $data_peg['id_peg'];?>'">
+				  <button type="button" class="btn btn-info right" onclick="location.href='<?php echo base_url()?>admin/data_mutasi/input_mutasi?id=<?php echo $data_peg['id_peg'];?>'">
 					<span class="fa fa-edit"></span> Tambah Data
 				  </button></br></br>
 				</div>
@@ -331,8 +331,8 @@
 								<span class='fa fa-angle-down'></span>
 							  </button>
 							  <ul class='dropdown-menu'>
-								<li><a href='?id=$row[id_peg]&id_tal=$row_tal[id_talenta]'>Delete</a></li>
-								<li><a href='?id_tal=$row_tal[id_talenta]'>Edit</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_talenta/edit_talenta?id=<?php echo $dt['id_talenta']?>'>Edit</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_talenta/proc_delete_talenta?id=<?php echo $dt['id_talenta']?>'>Delete</a></li>
 							  </ul>
 							</div>
 						</tr>
@@ -343,7 +343,7 @@
 					  </table>
 				  </div>
 				  
-				  <button type="button" class="btn btn-info right" onclick="location.href='?id=<?php echo $data_peg['id_peg'];?>'">
+				  <button type="button" class="btn btn-info right" onclick="location.href='<?php echo base_url()?>admin/data_talenta/input_talenta?id=<?php echo $data_peg['id_peg'];?>'">
 					<span class="fa fa-edit"></span> Tambah Data
 				  </button></br></br>
 				</div>
@@ -386,8 +386,8 @@
 									<span class='fa fa-angle-down'></span>
 								  </button>
 								  <ul class='dropdown-menu'>
-									<li><a href='?id=$row[id_peg]&id_kel=$row_kel[id_kel]'>Delete</a></li>
-									<li><a href='?id_kel=$row_kel[id_kel]'>Edit</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_keluarga/edit_keluarga?id=<?php echo $dk['id_kel']?>'>Edit</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_keluarga/proc_delete_keluarga?id=<?php echo $dk['id_kel']?>'>Delete</a></li>
 								  </ul>
 								</div>
 							</tr>
@@ -398,7 +398,7 @@
 						  </table>
 					  </div>
 					  
-					  <button type="button" class="btn btn-info right" onclick="location.href='?id=<?php echo $data_peg['id_peg'];?>'">
+					  <button type="button" class="btn btn-info right" onclick="location.href='<?php echo base_url()?>admin/data_keluarga/input_keluarga?id=<?php echo $data_peg['id_peg'];?>'">
 					    <span class="fa fa-edit"></span> Tambah Data
 					  </button></br></br>
 					</div>
