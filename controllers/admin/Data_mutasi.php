@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Data_sertifikasi extends CI_Controller {
+class Data_mutasi extends CI_Controller {
 	// CONSTRUCT
 	public function __construct() {
 		parent::__construct();
@@ -11,22 +11,22 @@ class Data_sertifikasi extends CI_Controller {
 			redirect('login');
 		}
 		$this->load->helper('text');
-		$this->load->model('model_sertifikasi'); //panggil model buat nampilin data sertifikasi
+		$this->load->model('model_mutasi'); //panggil model buat nampilin data mutasi
 	}
 	
-	// INPUT DATA sertifikasi
-	public function input_sertifikasi() {
+	// INPUT DATA mutasi
+	public function input_mutasi() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_sertifikasi',
+				'isi'=>'admin/input_mutasi',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		
 		$this->load->view('admin/layout/wrapper', $data);
 	}
 	
-	public function proc_input_sertifikasi() {
-		$input = $this->model_sertifikasi->addData();
+	public function proc_input_mutasi() {
+		$input = $this->model_mutasi->addData();
 		
 		if ($input === TRUE) {
 			echo "<script>alert('Data berhasil ditambahkan!');history.go(-2);</script>";
@@ -35,20 +35,20 @@ class Data_sertifikasi extends CI_Controller {
 		}
 	}
 	
-	// EDIT DATA sertifikasi
-	public function edit_sertifikasi() { // controller form edit
+	// EDIT DATA mutasi
+	public function edit_mutasi() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_sertifikasi',
+				'isi'=>'admin/edit_mutasi',
 				'username'=>$this->session->userdata('username'));
-		$data['ds'] = $this->model_sertifikasi->getData($id);
+		$data['dm'] = $this->model_mutasi->getData($id);
 				
 		$this->load->view('admin/layout/wrapper', $data);
 	}
 	
-	public function proc_edit_sertifikasi() { // controller proses edit
+	public function proc_edit_mutasi() { // controller proses edit
 		$id = $this->input->get('id');
-		$edit = $this->model_sertifikasi->editData($id);
+		$edit = $this->model_mutasi->editData($id);
 		
 		if ($edit == TRUE) {
 			echo "<script>alert('Data berhasil diperbaharui!');history.go(-2);</script>";
@@ -57,10 +57,10 @@ class Data_sertifikasi extends CI_Controller {
 		}
 	}
 	
-	// DELETE DATA sertifikasi
-	public function proc_delete_sertifikasi() { // c proses hapus data
+	// DELETE DATA mutasi
+	public function proc_delete_mutasi() { // c proses hapus data
 		$id = $this->input->get('id');
-		$delete = $this->model_sertifikasi->deleteData($id);
+		$delete = $this->model_mutasi->deleteData($id);
 		
 		if ($delete == TRUE) {
 			echo "<script>alert('Data berhasil dihapus!');history.go(-1);</script>";
