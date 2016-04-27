@@ -18,7 +18,7 @@ class Data_talenta extends CI_Controller {
 	public function input_talenta() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_talenta',
+				'isi'=>'admin/organik/input_talenta',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		$data['data_grade'] = $this->model_talenta->getGradeList(); // dropdown list grade di form
@@ -40,7 +40,7 @@ class Data_talenta extends CI_Controller {
 	public function edit_talenta() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_talenta',
+				'isi'=>'admin/organik/edit_talenta',
 				'username'=>$this->session->userdata('username'));			
 		$data['data_grade'] = $this->model_talenta->getGradeList(); // dropdown list grade di form
 		$data['dt'] = $this->model_talenta->getData($id);

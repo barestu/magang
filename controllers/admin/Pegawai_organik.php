@@ -17,7 +17,7 @@ class Pegawai_organik extends CI_Controller {
 	// INDEX
 	public function index() {
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/pegawai_organik',
+				'isi'=>'admin/organik/pegawai_organik',
 				'username'=>$this->session->userdata('username'));
 		$data['data_organik'] = $this->model_organik->getAllData();
 		
@@ -27,7 +27,7 @@ class Pegawai_organik extends CI_Controller {
 	// INPUT
 	public function input() {
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_organik',
+				'isi'=>'admin/organik/input_data_pegawai',
 				'username'=>$this->session->userdata('username'));
 		$data['next_id'] = $this->model_organik->getNextId();
 		$data['data_bidang'] = $this->model_organik->getBidang();
@@ -52,7 +52,7 @@ class Pegawai_organik extends CI_Controller {
 		$id = $this->input->get('id');
 		
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_organik',
+				'isi'=>'admin/organik/edit_data_pegawai',
 				'username'=>$this->session->userdata('username'));
 		$data['row'] = $this->model_organik->getData($id); // data pegawai yang sudah ada sebelumnya
 		$data['data_bidang'] = $this->model_organik->getBidang();

@@ -18,7 +18,7 @@ class Data_keluarga extends CI_Controller {
 	public function input_keluarga() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_keluarga',
+				'isi'=>'admin/organik/input_keluarga',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		
@@ -39,7 +39,7 @@ class Data_keluarga extends CI_Controller {
 	public function edit_keluarga() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_keluarga',
+				'isi'=>'admin/organik/edit_keluarga',
 				'username'=>$this->session->userdata('username'));
 		$data['dk'] = $this->model_keluarga->getData($id);
 				

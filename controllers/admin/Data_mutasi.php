@@ -18,7 +18,7 @@ class Data_mutasi extends CI_Controller {
 	public function input_mutasi() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_mutasi',
+				'isi'=>'admin/organik/input_mutasi',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		
@@ -39,7 +39,7 @@ class Data_mutasi extends CI_Controller {
 	public function edit_mutasi() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_mutasi',
+				'isi'=>'admin/organik/edit_mutasi',
 				'username'=>$this->session->userdata('username'));
 		$data['dm'] = $this->model_mutasi->getData($id);
 				

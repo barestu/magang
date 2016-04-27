@@ -18,7 +18,7 @@ class Data_pendidikan extends CI_Controller {
 	public function input_pendidikan() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_pendidikan',
+				'isi'=>'admin/organik/input_pendidikan',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		
@@ -39,7 +39,7 @@ class Data_pendidikan extends CI_Controller {
 	public function edit_pendidikan() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_pendidikan',
+				'isi'=>'admin/organik/edit_pendidikan',
 				'username'=>$this->session->userdata('username'));
 		$data['dp'] = $this->model_pendidikan->getData($id);
 				

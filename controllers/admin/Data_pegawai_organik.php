@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Data_organik extends CI_Controller {
+class Data_pegawai_organik extends CI_Controller {
 	// CONSTRUCT
 	public function __construct() {
 		parent::__construct();
@@ -24,7 +24,7 @@ class Data_organik extends CI_Controller {
 	public function index() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/data_organik',
+				'isi'=>'admin/organik/data_pegawai',
 				'username'=>$this->session->userdata('username'));
 		$data['data_peg'] = $this->model_data_organik->getData($id);
 		$data['data_pendidikan'] = $this->model_pendidikan->getDataAll($id);
