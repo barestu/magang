@@ -6,8 +6,9 @@
     <!-- plugins -->
     <script src="<?php echo base_url(); ?>asset/js/plugins/moment.min.js"></script>
     <script src="<?php echo base_url(); ?>asset/js/plugins/fullcalendar.min.js"></script>
-    <script src="<?php echo base_url(); ?>asset/js/plugins/jquery.nicescroll.js"></script>
-	
+    <script src="<?php echo base_url(); ?>asset/js/plugins/jquery.nicescroll.js"></script>  
+    <script src="<?php echo base_url(); ?>asset/js/plugins/jquery.datatables.min.js"></script>
+    <script src="<?php echo base_url(); ?>asset/js/plugins/datatables.bootstrap.min.js"></script>
 	<!-- buat logout -->
 	<div id="content">
         <div class="modal fade modal-v2" id="myModal" role="dialog">
@@ -23,7 +24,7 @@
                 <h4 align="center">Keluar Akun?</h4>
               </div>
               <div class="modal-footer">
-                <a href="<?php echo base_url(); ?>admin/dashboard/logout" class="btn btn-danger" role="button">Ya</a>
+                <a href="<?php echo base_url(); ?>admin/Dashboard/logout" class="btn btn-danger" role="button">Ya</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>          
              </div>
             </div>
@@ -34,6 +35,21 @@
     <!-- custom -->
      <script src="<?php echo base_url(); ?>asset/js/main.js"></script>
      <script type="text/javascript">
+        
+        $(document).ready(function(){
+       $('#datatables-example').DataTable();
+        });     
+
+        function Validate() {
+            var password = document.getElementById("txtPassword").value;
+            var confirmPassword = document.getElementById("txtConfirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Konfirmasi Password Tidak Cocok.");
+                return false;
+            }
+            return true;
+        }
+   
 	 
         // start: Calendar =========
          $('.dashboard .calendar').fullCalendar({
