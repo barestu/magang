@@ -11,7 +11,7 @@ class Pengaturan_akun extends CI_Controller {
 	}
 	public function index() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/pengaturan_akun_view', 			
+ 			'isi' => 'admin/manajemen_user/pengaturan_akun_view', 			
  			'username' => $this->session->userdata('username'),
  			'id_user_login' => $this->session->userdata('id_user_login'));
 		

@@ -11,7 +11,7 @@ class Manajemen_user extends CI_Controller {
 	}
 	public function index() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/manajemen_user_view',
+ 			'isi' => 'admin/manajemen_user/manajemen_user_view',
  			'user' => $this->Manajemen_user_model->tabel_user(),
  			'username' => $this->session->userdata('username'));
 		
@@ -19,7 +19,7 @@ class Manajemen_user extends CI_Controller {
 	}
 	public function form_input() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/input_manajemen_user_view',
+ 			'isi' => 'admin/manajemen_user/input_manajemen_user_view',
  			'id' => $this->Manajemen_user_model->form_input(),
  			'username' => $this->session->userdata('username'));
 		
@@ -37,7 +37,7 @@ class Manajemen_user extends CI_Controller {
 	}
 	public function form_edit() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/edit_manajemen_user_view',
+ 			'isi' => 'admin/manajemen_user/edit_manajemen_user_view',
  			'query' => $this->Manajemen_user_model->form_edit(),
  			'username' => $this->session->userdata('username'));
 		

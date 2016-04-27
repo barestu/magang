@@ -12,7 +12,7 @@ class Master_bidang extends CI_Controller {
 	}
 	public function index() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/master_bidang_view',
+ 			'isi' => 'admin/master/master_bidang_view',
  			'bidang' => $this->Master_bidang_model->tabel_master_bidang(),
  			'username' => $this->session->userdata('username'));
 		
@@ -20,7 +20,7 @@ class Master_bidang extends CI_Controller {
 	}
 	public function form_input() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/input_master_bidang_view',
+ 			'isi' => 'admin/master/input_master_bidang_view',
  			'id' => $this->Master_bidang_model->form_input(),
  			'username' => $this->session->userdata('username'));
 		

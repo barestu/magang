@@ -12,7 +12,7 @@ class Master_kompetensi extends CI_Controller {
 	}
 	public function index() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/master_kompetensi_view',
+ 			'isi' => 'admin/master/master_kompetensi_view',
  			'kompetensi' => $this->Master_kompetensi_model->tabel_master_kompetensi(),
  			'username' => $this->session->userdata('username'));
 		
@@ -20,7 +20,7 @@ class Master_kompetensi extends CI_Controller {
 	}
 	public function form_input() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/input_master_kompetensi_view',
+ 			'isi' => 'admin/master/input_master_kompetensi_view',
  			'id' => $this->Master_kompetensi_model->form_input(),
  			'username' => $this->session->userdata('username'));
 		
