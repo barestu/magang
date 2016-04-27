@@ -18,7 +18,7 @@ class Data_diklat extends CI_Controller {
 	public function input_diklat() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_diklat',
+				'isi'=>'admin/organik/input_diklat',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		
@@ -39,7 +39,7 @@ class Data_diklat extends CI_Controller {
 	public function edit_diklat() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_diklat',
+				'isi'=>'admin/organik/edit_diklat',
 				'username'=>$this->session->userdata('username'));
 		$data['dd'] = $this->model_diklat->getData($id);
 				

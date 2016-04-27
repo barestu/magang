@@ -18,7 +18,7 @@ class Data_sertifikasi extends CI_Controller {
 	public function input_sertifikasi() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/input_sertifikasi',
+				'isi'=>'admin/organik/input_sertifikasi',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		
@@ -39,7 +39,7 @@ class Data_sertifikasi extends CI_Controller {
 	public function edit_sertifikasi() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/edit_sertifikasi',
+				'isi'=>'admin/organik/edit_sertifikasi',
 				'username'=>$this->session->userdata('username'));
 		$data['ds'] = $this->model_sertifikasi->getData($id);
 				
