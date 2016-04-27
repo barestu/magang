@@ -49,7 +49,7 @@ class Manajemen_user extends CI_Controller {
 			if ($edit == TRUE) {
 			echo "<script>alert('Data berhasil diubah!');history.go(-2);</script>";
 			} elseif ($edit == FALSE) {
-			echo "<script>alert('Data gagal diubah!');history.go(-1);</script>";
+			echo "<script>alert('Password lama salah!');history.go(-1);</script>";
 			}		
 	}
 	public function form_delete($id_user_login) {
