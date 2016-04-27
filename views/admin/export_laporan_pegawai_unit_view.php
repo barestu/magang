@@ -50,8 +50,8 @@ header("content-disposition: attachment;filename=Laporan_Pegawai_Unit_&_Satuan_K
             echo "<tr>
                   <td align='center'>$no</td>
                    <td align='center'>$nip</td>
-                  <td width=300>$nama</td>
-                  <td align='center'>$tempat_lahir , $tgl_lahir</td>
+                  <td align='center' width=300>$nama</td>
+                  <td align='center'>$tempat_lahir , ".date('d-m-Y',strtotime($tgl_lahir)); echo "</td>
                   <td align='center'>$jenis_kelamin</td>
                   <td align='center'>$agama</td>
                   <td>$no_telp</td>
@@ -63,21 +63,6 @@ header("content-disposition: attachment;filename=Laporan_Pegawai_Unit_&_Satuan_K
                 </tr>";
             $no++;
             }
-
-           // foreach($data_keluarga->result_array() as $row){            
-            //$nama_kel = $row['nama_kel'];
-            //$hub_kel = $row['hub_kel'];
-            //$jk_kel = $row['jk_kel'];
-            //$tgl_kel = $row['tgl_kel'];
-            //$ket_kel = $row['ket_kel'];
-             
-            //echo "<tr>                                   
-                  //<td width=300>($hub_kel) $nama_kel</td>                  
-                  //<td align='center'>$jk_kel</td>
-                  //<td align='center'>$tgl_kel</td>  
-                  //<td align='center'>$ket_kel</td>                  
-                //</tr>";}
-
 ?>
 <!--selesai pencetakan-->
 </tbody></h3>

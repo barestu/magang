@@ -132,7 +132,7 @@
                   <td class='mid'>$no</td>
                    <td class='mid'>$nip</td>
                   <td class='mid'>$nama</td>
-                  <td class='mid'>".date('d-m-Y',strtotime($mulai_tanggal)); echo " - ".date('d-m-Y',strtotime($berakhir_tanggal)); echo "</td>
+                  <td class='mid'>".date('d-m-Y',strtotime($mulai_tanggal)); echo " s/d ".date('d-m-Y',strtotime($berakhir_tanggal)); echo "</td>
                   <td class='mid'>$semester</td>
                   <td class='mid'>$nama_grade</td>
                   <td class='mid'>$poin</td>                                                  

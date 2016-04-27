@@ -131,7 +131,7 @@
                   <td class='mid'>$no</td>
                    <td class='mid'>$nip</td>
                   <td class='mid'>$nama</td>
-                  <td class='mid'>$tempat_lahir , $tgl_lahir</td>
+                  <td class='mid'>$tempat_lahir , ".date('d-m-Y',strtotime($tgl_lahir)); echo "</td>
                   <td class='mid'>$jenis_kelamin</td>
                   <td class='mid'>$agama</td>
                   <td class='mid'>$nama_status</td>               

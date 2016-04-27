@@ -51,7 +51,7 @@
                                 </div>
                             </div>                            
                             <div class="form-group"><label class="col-sm-2 control-label text-right">NIP</label>
-                              <div class="col-sm-4"><input type="text" name="nip" maxlength="48" pattern="[0-9]{6}" title="Digit Angka" value="<?php echo $row['nip'] ?>" class="form-control" required ></div>
+                              <div class="col-sm-4"><input type="text" name="nip" maxlength="48" value="<?php echo $row['nip'] ?>" class="form-control" required ></div>
                             </div>
                             <div class="form-group"><label class="col-sm-2 control-label text-right">Email</label>
                               <div class="col-sm-4"><input type="email" name="email" maxlength="48" class="form-control" value="<?php echo $row['email'] ?>" required ></div>
