@@ -15,7 +15,7 @@
   <link href="<?php echo base_url(); ?>asset/css/style.css" rel="stylesheet">
   <!-- end: Css -->
 
-  <link rel="shortcut icon" href="<?php echo base_url(); ?>asset/img/logomi.png">
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>asset/img/plne.png">
 </head>
 
 <body id="mimin" class="dashboard form-signin-wrapper">
@@ -26,10 +26,9 @@
           <div class="panel periodic-login">
               <span class="atomic-number"></span>
               <div class="panel-body text-center">
-                  <h6 class="atomic-symbol">SIPEG</h6>
+                  <h1 class="atomic-mass">SIPEG</h1>
                   <p class="atomic-mass"></p>
-                  <p class="element-name">Sistem Informasi Pegawai</p>
-				  
+                  <p class="element-name">sistem informasi pegawai enjiniring</p>                  				  
                   <i class="icons icon-arrow-down"></i>
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
                     <input type="text" class="form-text" name='username' required autofocus>
@@ -41,15 +40,13 @@
                     <span class="bar"></span>
                     <label>Password</label>
                   </div>
-                  <label class="pull-left">
-                  <input type="checkbox" class="icheck pull-left" name="checkbox1"/> Remember me
-                  </label>
+                  
                   <input type="submit" class="btn col-md-12" value="Sign In"/>
               </div>
               
 			  <div class="text-center" style="padding:5px;">
                 <a href="#">Forgot Password </a>
-                <a href="#">| Sign Up</a>
+                <a href="<?php echo base_url(); ?>login/sign_up">| Sign Up</a>
               </div>
           </div>
         </form>
