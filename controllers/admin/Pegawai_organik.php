@@ -64,11 +64,12 @@ class Pegawai_organik extends CI_Controller {
 	
 	public function proc_edit() {
 		$id = $this->input->get('id');
-		$edit = $this->model_organik->editData($id);
+		$edit1 = $this->model_organik->editDataPegawai($id);
+		$edit2 = $this->model_organik->editDataOrganik($id);
 		
-		if ($edit == TRUE) {
+		if ($edit1 || $edit2 == TRUE) {
 			echo "<script>alert('Data berhasil diperbaharui!');history.go(-2);</script>";
-		} elseif ($edit == FALSE) {
+		} elseif ($edit1 || $edit2 == FALSE) {
 			echo "<script>alert('Data gagal diperbaharui!');history.go(-1);</script>";
 		}
 	}
@@ -78,9 +79,9 @@ class Pegawai_organik extends CI_Controller {
 		$id = $this->input->get('id');
 		$delete = $this->model_organik->deleteData($id);
 		
-		if ($delete == TRUE) {
+		if ($delete === TRUE) {
 			echo "<script>alert('Data berhasil dihapus!');history.go(-1);</script>";
-		} elseif ($delete == FALSE) {
+		} elseif ($delete === FALSE) {
 			echo "<script>alert('Data gagal dihapus!');history.go(-1);</script>";
 		}
 	}
