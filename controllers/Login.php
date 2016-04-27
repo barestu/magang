@@ -32,6 +32,23 @@ class Login extends CI_Controller {
 		}
 	}
 
+	public function sign_up() {
+		$this->load->model('model_user');
+		$isi = array('id' => $this->model_user->sign_up());			
+
+		$this->load->view('login/sign_up_form',$isi);
+	}
+	public function input_sign_up() {
+		$this->load->model('model_user'); 
+				$input=$this->model_user->input_sign_up(); 
+
+ 		if ($input === TRUE) {
+			echo "<script>alert('Berhasil daftar akun!');history.go(-2);</script>";	
+		} elseif ($input === FALSE) {
+			echo "<script>alert('Username sudah dipakai!');history.go(-1);</script>";
+		}
+	}
+
 }
 
 ?>
