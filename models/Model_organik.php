@@ -19,9 +19,9 @@ class Model_organik extends CI_Model {
  // Ambil data pegawai yang ditentukan
  public function getData($id) {
 	$this->db->select('*');
-	$this->db->from('tbl_pegawai AS tp, tb_pegawai_organik AS to, tb_jabatan AS tj, tb_bidang AS tb, tb_direktorat AS td');
+	$this->db->from('tbl_pegawai AS tp, tb_pegawai_organik AS tpo, tb_jabatan AS tj, tb_bidang AS tb, tb_direktorat AS td');
 	$this->db->where('tp.id_peg', $id);
-	$this->db->where('tp.id_peg = to.id_peg');
+	$this->db->where('tp.id_peg = tpo.id_peg');
 	$this->db->where('tp.id_bid = tb.id_bid');
 	$this->db->where('tp.id_jab = tj.id_jab');
 	$this->db->where('tp.id_direktorat = td.id_direktorat');
@@ -32,6 +32,7 @@ class Model_organik extends CI_Model {
  
  // Input data pegawai baru 
  public function addData() {
+	$d['id_status'] = 1;
 	$d['id_peg'] = $this->input->post('id_peg');
 	$d['id_bid'] = $this->input->post('id_bid');
 	$d['id_jab'] = $this->input->post('id_jab');
@@ -64,7 +65,9 @@ class Model_organik extends CI_Model {
  }
  
  // Edit data pegawai
- public function editData($id) {
+ public function editDataPegawai($id) {
+	$d['id_status'] = 1;
+	$d['id_peg'] = $id;
 	$d['id_bid'] = $this->input->post('id_bid');
 	$d['id_jab'] = $this->input->post('id_jab');
 	$d['id_direktorat'] = $this->input->post('id_direktorat');	 
@@ -80,21 +83,29 @@ class Model_organik extends CI_Model {
 	$d['agama'] = $this->input->post('agama');
 	$d['status'] = $this->input->post('status');
 	$d['jml_keluarga'] = $this->input->post('jml_keluarga');
-	$d2['tgl_masuk'] = $this->input->post('tgl_masuk');
-	$d2['tgl_angkat'] = $this->input->post('tgl_angkat');	
 	
 	$this->db->where('id_peg', $id);
 	$this->db->update('tbl_pegawai', $d);
 	
 	if($this->db->affected_rows() > 0) {
-		$this->db->where('id_peg', $id);
-		$this->db->update('tb_pegawai_organik', $d2);	
-		if($this->db->affected_rows() > 0) {
-			return TRUE;	
-		}
+		return TRUE;
 	} else {
 		return FALSE;
-	}	
+	}
+ }
+ 
+ public function editDataOrganik($id) {
+	$d['id_peg'] = $id;
+	$d['tgl_masuk'] = $this->input->post('tgl_masuk');
+	$d['tgl_angkat'] = $this->input->post('tgl_angkat');	
+	$this->db->where('id_peg', $id);
+	$this->db->update('tb_pegawai_organik', $d);
+	
+	if($this->db->affected_rows() > 0) {
+		return TRUE;
+	} else {
+		return FALSE;
+	}
  }
  
  // Delete data pegawai
