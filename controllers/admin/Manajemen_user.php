@@ -11,7 +11,7 @@ class Manajemen_user extends CI_Controller {
 	}
 	public function index() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/manajemen_user_view',
+ 			'isi' => 'admin/manajemen_user/manajemen_user_view',
  			'user' => $this->Manajemen_user_model->tabel_user(),
  			'username' => $this->session->userdata('username'));
 		
@@ -19,7 +19,7 @@ class Manajemen_user extends CI_Controller {
 	}
 	public function form_input() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/input_manajemen_user_view',
+ 			'isi' => 'admin/manajemen_user/input_manajemen_user_view',
  			'id' => $this->Manajemen_user_model->form_input(),
  			'username' => $this->session->userdata('username'));
 		
@@ -37,7 +37,7 @@ class Manajemen_user extends CI_Controller {
 	}
 	public function form_edit() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/edit_manajemen_user_view',
+ 			'isi' => 'admin/manajemen_user/edit_manajemen_user_view',
  			'query' => $this->Manajemen_user_model->form_edit(),
  			'username' => $this->session->userdata('username'));
 		
@@ -49,7 +49,7 @@ class Manajemen_user extends CI_Controller {
 			if ($edit == TRUE) {
 			echo "<script>alert('Data berhasil diubah!');history.go(-2);</script>";
 			} elseif ($edit == FALSE) {
-			echo "<script>alert('Data gagal diubah!');history.go(-1);</script>";
+			echo "<script>alert('Password lama salah!');history.go(-1);</script>";
 			}		
 	}
 	public function form_delete($id_user_login) {
@@ -62,6 +62,15 @@ class Manajemen_user extends CI_Controller {
 		} elseif ($delete == FALSE) {
 			echo "<script>alert('Data gagal dihapus!');history.go(-1);</script>";
 		}
+	}
+	public function aktivasi() {								
+			$aktiv=$this->Manajemen_user_model->aktiv();
+
+			if ($aktiv == TRUE) {
+			echo "<script>alert('User berhasil di aktifkan!');history.go(-1);</script>";
+			} elseif ($aktiv == FALSE) {
+			echo "<script>alert('Akun ini sudah aktif!');history.go(-1);</script>";
+			}		
 	}
 }
 ?>
