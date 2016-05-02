@@ -21,5 +21,25 @@ class Dashboard_model extends CI_Model {
 				$this->session->set_userdata($post);
  			}
  }
+ public function pegawai_organik() {
+
+ $query = $this->db->query("SELECT id_status
+							FROM tbl_pegawai 
+							WHERE id_status = '1'");
+ 			if ($query->num_rows() > 0){
+ 				$organik = $query->num_rows(); 				
+				return $organik;
+ 			}
+ }
+ public function pegawai_pkwt() {
+
+ $query = $this->db->query("SELECT id_status
+							FROM tbl_pegawai 
+							WHERE id_status = '2'");
+ 			if ($query->num_rows() > 0){
+ 				$pkwt = $query->num_rows(); 				
+				return $pkwt;
+ 			}
+ }
 }
 ?>
