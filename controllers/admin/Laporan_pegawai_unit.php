@@ -15,7 +15,7 @@ class Laporan_pegawai_unit extends CI_Controller {
 	$this->session->unset_userdata('id_bid'); 
 	$this->session->unset_userdata('id_jabatan');  				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/laporan_pegawai_unit_view',
+ 			'isi' => 'admin/laporan/laporan_pegawai_unit_view',
  			'view_direktorat' => $this->Laporan_pegawai_unit_model->list_direktorat(),
  			'view_jabatan' => $this->Laporan_pegawai_unit_model->list_jabatan(),
  			'view_bidang' => $this->Laporan_pegawai_unit_model->list_bidang(),
@@ -27,7 +27,7 @@ class Laporan_pegawai_unit extends CI_Controller {
 	
 
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/laporan_pegawai_unit_view',
+ 			'isi' => 'admin/laporan/laporan_pegawai_unit_view',
  			'view_direktorat' => $this->Laporan_pegawai_unit_model->list_direktorat(),
  			'view_jabatan' => $this->Laporan_pegawai_unit_model->list_jabatan(),
  			'view_bidang' => $this->Laporan_pegawai_unit_model->list_bidang(),
@@ -40,12 +40,12 @@ class Laporan_pegawai_unit extends CI_Controller {
 	
 
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/laporan_pegawai_unit_view', 			
+ 			'isi' => 'admin/laporan/laporan_pegawai_unit_view', 			
  			'data_pribadi' => $this->Laporan_pegawai_unit_model->data_pribadi(),
  			'data_keluarga' => $this->Laporan_pegawai_unit_model->data_keluarga(),
  			'username' => $this->session->userdata('username'));
 		
- 		$this->load->view('admin/export_laporan_pegawai_unit_view',$isi);
+ 		$this->load->view('admin/laporan/export_laporan_pegawai_unit_view',$isi);
 	}
 	
 

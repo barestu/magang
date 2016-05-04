@@ -12,7 +12,7 @@ class Master_grade extends CI_Controller {
 	}
 	public function index() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/master_grade_view',
+ 			'isi' => 'admin/master/master_grade_view',
  			'grade' => $this->Master_grade_model->tabel_master_grade(),
  			'username' => $this->session->userdata('username'));
 		
@@ -20,7 +20,7 @@ class Master_grade extends CI_Controller {
 	}
 	public function form_input() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/input_master_grade_view',
+ 			'isi' => 'admin/master/input_master_grade_view',
  			'id' => $this->Master_grade_model->form_input(),
  			'username' => $this->session->userdata('username'));
 		
@@ -45,14 +45,7 @@ class Master_grade extends CI_Controller {
 		} elseif ($delete == FALSE) {
 			echo "<script>alert('Data gagal dihapus!');history.go(-1);</script>";
 		}
-	}
-	public function logout() {
-		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('level');
-		session_destroy();
-		redirect('login');
-	}
-	
+	}	
 
 }
 ?>

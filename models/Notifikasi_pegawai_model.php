@@ -14,7 +14,7 @@ class Notifikasi_pegawai_model extends CI_Model {
 			AND tb_pegawai_pkwt.akhir_kontrak 
 				BETWEEN CURDATE() 
 					AND ADDDATE(CURDATE(), INTERVAL 1 MONTH)				
-			ORDER BY akhir_kontrak DESC");
+			ORDER BY akhir_kontrak ASC");
  return $query;
  }
 }

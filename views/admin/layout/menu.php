@@ -9,8 +9,7 @@
                       <p class="animated fadeInRight">Sat,October 1st 2029</p>
                     </li>
                     <li class="active ripple">
-                      <a class="tree-toggle nav-header"><span class="fa-home fa"></span> Beranda 
-                        <span class="fa-angle-right fa right-arrow text-right"></span>
+                      <a href="<?php echo base_url(); ?>admin/Dashboard/index" ><span class="fa-home fa"></span> Beranda 
                       </a>
                     </li>
                     <li class="ripple">
@@ -29,7 +28,7 @@
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
-                        <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_unit/index">Unit Kerja & Satuan Kerja</a></li>
+                        <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_unit/index">Unit & Satuan Kerja</a></li>
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_diklat/index">Diklat</a></li>
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_sertifikasi/index">Sertifikasi</a></li>
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_talenta/index">Data Talenta</a></li>
@@ -42,11 +41,11 @@
                         <span class='fa-angle-right fa right-arrow text-right'></span>
                       </a>
                       <ul class='nav nav-list tree'>
-                        <li><a href='#'>Direktorat</a></li>                        
-                        <li><a href='#'>Jabatan</a></li>                        
-                        <li><a href='#'>Bidang</a></li>
-                        <li><a href='#'>Kompetensi</a></li>                        
-                        <li><a href='#'>Grade</a></li>                        
+                        <li><a href="<?php echo base_url() ?>admin/Master_direktorat/index">Direktorat</a></li>                        
+                        <li><a href="<?php echo base_url() ?>admin/Master_jabatan/index">Jabatan</a></li>                        
+                        <li><a href="<?php echo base_url() ?>admin/Master_bidang/index">Bidang</a></li>
+                        <li><a href="<?php echo base_url() ?>admin/Master_kompetensi/index">Kompetensi</a></li>                        
+                        <li><a href="<?php echo base_url() ?>admin/Master_grade/index">Grade</a></li>                        
                       </ul>
                     </li>                    
                     <li class="ripple">

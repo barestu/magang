@@ -12,7 +12,7 @@ class Master_jabatan extends CI_Controller {
 	}
 	public function index() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/master_jabatan_view',
+ 			'isi' => 'admin/master/master_jabatan_view',
  			'jabatan' => $this->Master_jabatan_model->tabel_master_jabatan(),
  			'username' => $this->session->userdata('username'));
 		
@@ -20,7 +20,7 @@ class Master_jabatan extends CI_Controller {
 	}
 	public function form_input() {				
 		$isi = array('title' => 'SIPEG',
- 			'isi' => 'admin/input_master_jabatan_view',
+ 			'isi' => 'admin/master/input_master_jabatan_view',
  			'id' => $this->Master_jabatan_model->form_input(),
  			'username' => $this->session->userdata('username'));
 		

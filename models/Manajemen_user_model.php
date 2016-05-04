@@ -24,7 +24,8 @@ class Manajemen_user_model extends CI_Model {
 		$input['password'] = md5($this->input->post("password"));
 		$input['email'] = $this->input->post("email");
 		$input['nip'] = $this->input->post("nip");
-		$input['level'] = $this->input->post("level");			
+		$input['level'] = $this->input->post("level");
+		$input['status_akun'] =	'0';		
 		
  		$this->db->insert("tbl_user_login",$input);
 
@@ -81,6 +82,19 @@ public function delete($id){
 		return FALSE;
 	}
 }
+	public function aktiv() {
+		$id = $this->input->get('id');
+		$input['status_akun'] = '1'; 
+		
+		$this->db->where('id_user_login', $id);        
+		$this->db->update("tbl_user_login",$input);
+		if($this->db->affected_rows() == 1) {
+					return TRUE; }					
+			else {
+				return FALSE;
+					}		
+
+ 	}
 
 
 }
