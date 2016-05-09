@@ -36,7 +36,7 @@
             $nip = $row['nip'];
             $nama = $row['nama'];
             $nama_status = $row['nama_status'];            
-            $akhir_kontrak = $row['akhir_kontrak'];
+            $akhir_kontrak = $row['berakhir_kontrak'];
             $selisih = $row['selisih'];
             //buat isi tabel Akses nya ?>        
             <tr>
