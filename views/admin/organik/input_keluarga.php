@@ -19,7 +19,7 @@
 			 <h4>Form Pengisian</h4>
 			</div>
 			<div class="panel-body">
-		      <div class="col-sm-2"><input type="text" name="id_peg" maxlength="20" value="<?php echo $id_peg?>" class="form-control" readonly="readonly"></div>
+		      <div class="col-sm-2"><input type="hidden" name="id_peg" maxlength="20" value="<?php echo $id_peg?>" class="form-control" readonly="readonly"></div>
 			  <div class="form-group"><label class="col-sm-2 control-label text-right">Nama</label>
 				<div class="col-sm-6"><input type="text" name="nama_kel" maxlength="48" class="form-control" required></div>
 			  </div>
