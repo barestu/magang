@@ -14,7 +14,7 @@
                     </li>
                     <li class="ripple">
                       <a class="tree-toggle nav-header">
-                        <span class="fa-diamond fa"></span> Data Pegawai
+                        <span class="fa-group fa"></span> Data Pegawai
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
@@ -24,7 +24,7 @@
                     </li>
                     <li class="ripple">
                       <a class="tree-toggle nav-header">
-                        <span class="fa-diamond fa"></span> Laporan Pegawai
+                        <span class="fa fa-file-excel-o"></span> Laporan Pegawai
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
@@ -32,12 +32,12 @@
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_diklat/index">Diklat</a></li>
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_sertifikasi/index">Sertifikasi</a></li>
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_talenta/index">Data Talenta</a></li>
-                        <li><a href="#">Cetak CV</a></li>
+                        <li><a href="<?php echo base_url(); ?>admin/Cv/index">Cetak CV</a></li>
                       </ul>
                     </li>
                     <li class='ripple'>
                       <a class='tree-toggle nav-header'>
-                        <span class='fa-diamond fa'></span> Data Master
+                        <span class='fa-server fa'></span> Data Master
                         <span class='fa-angle-right fa right-arrow text-right'></span>
                       </a>
                       <ul class='nav nav-list tree'>
