@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2016 at 01:45 AM
+-- Generation Time: May 09, 2016 at 05:08 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -55,11 +55,10 @@ CREATE TABLE IF NOT EXISTS `tbl_pegawai` (
 --
 
 INSERT INTO `tbl_pegawai` (`id_peg`, `id_status`, `id_bid`, `id_jab`, `id_direktorat`, `nip`, `nama`, `alamat`, `no_telp`, `email`, `email2`, `tempat_lahir`, `tgl_lahir`, `jenis_kelamin`, `agama`, `status`, `jml_keluarga`) VALUES
-('1', 1, 1, 1, 1, '0000001', 'Artour Babaev', 'Cengkareng, Jakarta Barat', '081804323001', 'artour1990@gmail.com', 'artour@plne.com', 'Jakarta', '1994-12-05', 'Laki-Laki', 'Islam', 'Belum Menikah', 0),
-('3', 1, 2, 94, 5, '7804004 - PLNE', 'Hans Siregar', 'Jakarta\r\n', '0813 1491 8578', 'hans@pln-enjiniring.com', 'hans_civil96@yahoo.com', 'Jakarta', '1978-08-18', 'Laki-Laki', 'Kristen', 'Belum Menikah', 0),
-('5', 0, 9, 12, 3, '9999800', 'Hiro Mashima', 'qwert', '0198230182', 'qwe@q.c', '123@ejqe.np', 'qwer', '2222-02-02', 'Laki-Laki', 'Kristen', 'Belum Menikah', 0),
-('6', 0, 15, 6, 3, '9999990', 'Jacky Lmao', 'Jakarta', '123123123123', 'qwer@qwe.c', 'qwe@ad.c', 'qwe', '1111-01-01', 'Perempuan', 'Islam', 'Belum Menikah', 0),
-('7', 0, 1, 2, 2, '0000002', 'Lord Artour', 'qwer', '123123123', 'qwe@qwe', 'qwe@qwe', 'qwe', '1990-01-01', 'Laki-Laki', 'Budha', 'Belum Menikah', 0);
+('1', 1, 1, 1, 1, '0000001 - RTZ', 'Artour Babaev', 'Cengkareng, Jakarta Barat', '081804323001', 'artour1990@gmail.com', 'artour@plne.com', 'Jakarta', '1994-12-05', 'Laki-Laki', 'Islam', 'Menikah', 0),
+('2', 1, 9, 87, 2, '0000002 - SPG', 'Jacky Lmao', 'Montreal, Canada', '081809809809', 'jacky.lmao@lmao.co', 'jacky.lmao@lmao.co', 'Kota Gede', '1991-02-09', 'Perempuan', 'Lainnya', 'Belum Menikah', 0),
+('4', 2, 15, 143, 2, '0000022 - KZL', 'Amy Reinbach', 'Cikarang', '081804232232', 'asdf@adfs.cd', 'asdf@adfs.cd', 'Asgard', '1986-10-05', 'Laki-Laki', 'Islam', 'Belum Menikah', 0),
+('5', 2, 15, 19, 2, '0000023 - MSR', 'Ramsus Filipsen', 'Jakarta', '09183219123', 'qweqwe@qwew.c', 'qeqweqw@fsd.d', 'Jakarta', '1989-02-28', 'Laki-Laki', 'Islam', 'Belum Menikah', 0);
 
 -- --------------------------------------------------------
 
@@ -135,14 +134,16 @@ CREATE TABLE IF NOT EXISTS `tb_diklat` (
   `jenis_dik` varchar(50) NOT NULL,
   `tahun_dik` varchar(5) NOT NULL,
   PRIMARY KEY (`id_dik`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `tb_diklat`
 --
 
 INSERT INTO `tb_diklat` (`id_dik`, `id_peg`, `nama_dik`, `jenis_dik`, `tahun_dik`) VALUES
-(5, 1, 'PENGATURAN OPERASI DISTRIBUSI', 'Diklat Profesi', '2012');
+(7, 1, 'DIKLAT BABY RAGE', 'Diklat Profesi', '2007'),
+(8, 1, 'DIKLAT NA DOTO BEST DOTO', 'Diklat Profesi', '2013'),
+(10, 4, 'DIKLAT FOR BEGINNER', 'Diklat Profesi', '2009');
 
 -- --------------------------------------------------------
 
@@ -372,15 +373,16 @@ CREATE TABLE IF NOT EXISTS `tb_keluarga` (
   `tgl_kel` date NOT NULL,
   `ket_kel` varchar(20) NOT NULL,
   PRIMARY KEY (`id_kel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tb_keluarga`
 --
 
 INSERT INTO `tb_keluarga` (`id_kel`, `id_peg`, `nama_kel`, `hub_kel`, `jk_kel`, `tgl_kel`, `ket_kel`) VALUES
-(3, 1, 'Sayuki Kanno', 'Istri', 'Perempuan', '1989-01-05', 'Ditanggung'),
-(5, 1, 'Ludwig Wahlberg', 'Anak', 'Laki-laki', '1996-03-08', 'Ditanggung');
+(3, 1, 'Jacky Lmao', 'Istri', 'Perempuan', '1989-01-05', 'Ditanggung'),
+(6, 1, 'Matthew Bailey', 'Anak', 'Laki-laki', '1994-10-31', 'Tidak Ditanggung'),
+(7, 4, 'Roman Fominok Ale', 'Suami', 'Laki-laki', '1989-11-29', 'Ditanggung');
 
 -- --------------------------------------------------------
 
@@ -442,7 +444,7 @@ CREATE TABLE IF NOT EXISTS `tb_mutasi` (
   `tgl_sejak` date NOT NULL,
   `tgl_hingga` date NOT NULL,
   PRIMARY KEY (`id_mut`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `tb_mutasi`
@@ -450,7 +452,8 @@ CREATE TABLE IF NOT EXISTS `tb_mutasi` (
 
 INSERT INTO `tb_mutasi` (`id_mut`, `id_peg`, `nama_mut`, `tgl_sejak`, `tgl_hingga`) VALUES
 (1, 1, 'ASSISTANT ENGINEER PEMELIHARAAN DISTRIBUSI', '2011-06-01', '2011-11-14'),
-(3, 1, 'ASSISTANT OF THE KAPPA CRUSADER', '2011-11-15', '2011-12-31');
+(3, 1, 'ASSISTANT OF THE KAPPA CRUSADER', '2011-11-15', '2011-12-31'),
+(5, 1, 'DIRECTOR OF THE SADBOYS', '2016-11-29', '2016-12-30');
 
 -- --------------------------------------------------------
 
@@ -471,10 +474,7 @@ CREATE TABLE IF NOT EXISTS `tb_pegawai_organik` (
 
 INSERT INTO `tb_pegawai_organik` (`id_peg`, `tgl_masuk`, `tgl_angkat`) VALUES
 (1, '2008-01-05', '2008-01-10'),
-(3, '2003-09-22', '2003-09-24'),
-(5, '2016-01-01', '2016-01-01'),
-(6, '2016-12-31', '2016-12-31'),
-(7, '2014-09-29', '2014-11-27');
+(2, '2004-08-27', '2006-08-28');
 
 -- --------------------------------------------------------
 
@@ -486,7 +486,8 @@ CREATE TABLE IF NOT EXISTS `tb_pegawai_pkwt` (
   `id_peg` int(20) NOT NULL,
   `no_npwp` varchar(30) NOT NULL,
   `no_kontrak` varchar(30) NOT NULL,
-  `tgl_kontrak` date NOT NULL,
+  `mulai_kontrak` date NOT NULL,
+  `berakhir_kontrak` date NOT NULL,
   `lama_kontrak` int(10) NOT NULL,
   `uang_tugas` int(20) NOT NULL,
   `uang_insentif` int(20) NOT NULL,
@@ -494,6 +495,14 @@ CREATE TABLE IF NOT EXISTS `tb_pegawai_pkwt` (
   `uang_transport` int(20) NOT NULL,
   PRIMARY KEY (`id_peg`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_pegawai_pkwt`
+--
+
+INSERT INTO `tb_pegawai_pkwt` (`id_peg`, `no_npwp`, `no_kontrak`, `mulai_kontrak`, `berakhir_kontrak`, `lama_kontrak`, `uang_tugas`, `uang_insentif`, `uang_makan`, `uang_transport`) VALUES
+(4, '002', '002', '2011-08-28', '2012-04-27', 8, 100000, 200000, 300000, 500000),
+(5, '003', '003', '2015-08-02', '2016-05-29', 9, 100000, 200000, 300000, 400000);
 
 -- --------------------------------------------------------
 
@@ -517,7 +526,7 @@ CREATE TABLE IF NOT EXISTS `tb_pendidikan` (
 --
 
 INSERT INTO `tb_pendidikan` (`id_pen`, `id_peg`, `tingkat_pen`, `tahun_pen`, `lembaga_pen`, `status_pen`, `gelar_pen`) VALUES
-(2, 1, 'SD', '2007', 'SD NEGERI 2 WONOSARI', '', ''),
+(2, 1, 'SD', '2007', 'SD NEGERI 1 JAKARTA', '', ''),
 (3, 1, 'SMP', '2010', 'SMP NEGERI 1 WONOSARI', '', ''),
 (4, 1, 'SMA IPA', '2012', 'SMA NEGERI 1 WONOSARI', '', '');
 
@@ -548,7 +557,7 @@ CREATE TABLE IF NOT EXISTS `tb_sertifikasi` (
   `tanggal_ser` date NOT NULL,
   `nama_ser` varchar(50) NOT NULL,
   PRIMARY KEY (`id_ser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tb_sertifikasi`
@@ -556,7 +565,9 @@ CREATE TABLE IF NOT EXISTS `tb_sertifikasi` (
 
 INSERT INTO `tb_sertifikasi` (`id_ser`, `id_peg`, `tanggal_ser`, `nama_ser`) VALUES
 (2, 1, '2011-02-05', 'SERTIFIKASI OF THE MEMELORD'),
-(4, 1, '2009-05-09', 'SERTIFIKASI 322 YOLO');
+(4, 1, '2009-03-30', 'SERTIFIKASI 322 YOLO'),
+(6, 1, '2009-10-05', 'SERTIFIKASI BABYRAEG '),
+(7, 4, '2013-01-31', 'SERTIFIKASI PEGAWAI 1');
 
 -- --------------------------------------------------------
 
@@ -601,7 +612,7 @@ CREATE TABLE IF NOT EXISTS `tb_talenta` (
 
 INSERT INTO `tb_talenta` (`id_talenta`, `id_peg`, `mulai_tanggal`, `berakhir_tanggal`, `semester`, `id_grade`, `poin`) VALUES
 (1, 1, '2011-07-01', '2011-12-31', '1', 3, 'A'),
-(2, 1, '2012-01-01', '2012-06-30', '2', 3, 'A');
+(2, 1, '2012-01-01', '2012-06-30', '2', 3, 'B');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
