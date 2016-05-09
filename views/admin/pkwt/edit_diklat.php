@@ -5,12 +5,12 @@
 		<div class="col-md-12">
 			<h3 class="animated fadeInLeft">Edit Data Diklat Pegawai</h3>
 			<p class="animated fadeInDown">
-			  Data Pegawai <span class="fa-angle-right fa"></span> Data Pegawai Organik <span class="fa-angle-right fa"></span> Data Diklat Pegawai
+			  Data Pegawai <span class="fa-angle-right fa"></span> Data Pegawai PKWT <span class="fa-angle-right fa"></span> Data Diklat Pegawai
 			</p>
 		</div>
 	  </div>
 	</div>
-	<form class="form-element" method="post" action="<?php echo base_url()?>admin/data_diklat/proc_edit_diklat?id=<?php echo $dd['id_dik']?>" autocomplete="off" >
+	<form class="form-element" method="post" action="<?php echo base_url()?>admin/data_diklat/proc_edit_diklat_pkwt?id=<?php echo $dd['id_dik']?>" autocomplete="off" >
 	
 	  <div class="col-md-11 padding-2">
 		<div class="col-md-20">

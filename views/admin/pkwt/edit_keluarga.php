@@ -10,7 +10,7 @@
 		</div>
 	  </div>
 	</div>
-	<form class="form-element" method="post" action="<?php echo base_url()?>admin/data_keluarga/proc_edit_keluarga?id=<?php echo $dk['id_kel']?>" autocomplete="off" >
+	<form class="form-element" method="post" action="<?php echo base_url()?>admin/data_keluarga/proc_edit_keluarga_pkwt?id=<?php echo $dk['id_kel']?>" autocomplete="off" >
 	
 	  <div class="col-md-11 padding-2">
 		<div class="col-md-20">
