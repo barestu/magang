@@ -11,6 +11,7 @@ class Model_organik extends CI_Model {
 			WHERE tbl_pegawai.id_jab = tb_jabatan.id_jab
 			AND tbl_pegawai.id_bid = tb_bidang.id_bid
 			AND tbl_pegawai.id_direktorat = tb_direktorat.id_direktorat
+			AND tbl_pegawai.id_status = '1'
 			ORDER BY nip ASC");
 	
 	return $query->result_array();
