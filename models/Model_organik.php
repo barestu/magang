@@ -9,6 +9,7 @@ class Model_organik extends CI_Model {
 	$query = $this->db->query("SELECT id_peg, nip, nama, nama_jab, nama_bid, nama_direktorat
 			FROM tbl_pegawai, tb_jabatan, tb_bidang, tb_direktorat
 			WHERE tbl_pegawai.id_jab = tb_jabatan.id_jab
+			AND id_status = 1
 			AND tbl_pegawai.id_bid = tb_bidang.id_bid
 			AND tbl_pegawai.id_direktorat = tb_direktorat.id_direktorat
 			ORDER BY nip ASC");
@@ -110,19 +111,29 @@ class Model_organik extends CI_Model {
  
  // Delete data pegawai
  public function deleteData($id) {
-	$this->db->where('id_peg', $id);
-	$this->db->delete('tbl_pegawai');
+	$this->db->trans_start(); # starting transaction
+	 $this->db->delete('tbl_pegawai', array('id_peg' => $id));
+	 $this->db->delete('tb_pegawai_organik', array('id_peg' => $id));
+	 $this->db->delete('tb_diklat', array('id_peg' => $id));
+	 $this->db->delete('tb_sertifikasi', array('id_peg' => $id));
+	 $this->db->delete('tb_mutasi', array('id_peg' => $id));
+	 $this->db->delete('tb_talenta', array('id_peg' => $id));
+	 $this->db->delete('tb_pendidikan', array('id_peg' => $id));
+  	 $this->db->delete('tb_keluarga', array('id_peg' => $id));
+	$this->db->trans_complete(); # completing transaction
 	
-	if($this->db->affected_rows() == 1) {
-		$this->db->where('id_peg', $id);
-		$this->db->delete('tb_pegawai_organik');		
-		if($this->db->affected_rows() == 1) {
-			return TRUE;
-		}
-	} else {
+	if($this->db->trans_status() === FALSE) {
+		# if something went wrong
+		# all change reverted
+		$this->db->trans_rollback();
 		return FALSE;
+	} else {
+		# everything worked
+		# commiting data to the db
+		$this->db->trans_commit();
+		return TRUE;
 	}
- }
+ } 
  
  // FUNGSI DB DROPDOWN DI FORM
  public function getBidang() {

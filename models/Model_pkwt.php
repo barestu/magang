@@ -131,17 +131,24 @@ class Model_pkwt extends CI_Model {
  
  // Delete data pegawai
  public function deleteData($id) {
-	$this->db->where('id_peg', $id);
-	$this->db->delete('tbl_pegawai');
+	$this->db->trans_start(); # starting transaction
+	 $this->db->delete('tbl_pegawai', array('id_peg' => $id));
+	 $this->db->delete('tb_pegawai_pkwt', array('id_peg' => $id));
+	 $this->db->delete('tb_diklat', array('id_peg' => $id));
+	 $this->db->delete('tb_sertifikasi', array('id_peg' => $id));
+  	 $this->db->delete('tb_keluarga', array('id_peg' => $id));
+	$this->db->trans_complete(); # completing transaction
 	
-	if($this->db->affected_rows() == 1) {
-		$this->db->where('id_peg', $id);
-		$this->db->delete('tb_pegawai_pkwt');		
-		if($this->db->affected_rows() == 1) {
-			return TRUE;
-		}
-	} else {
+	if($this->db->trans_status() === FALSE) {
+		# if something went wrong
+		# all change reverted
+		$this->db->trans_rollback();
 		return FALSE;
+	} else {
+		# everything worked
+		# commiting data to the db
+		$this->db->trans_commit();
+		return TRUE;
 	}
  }
  
