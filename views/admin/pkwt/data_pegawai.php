@@ -137,7 +137,7 @@
 							  </button>
 							  <ul class='dropdown-menu'>
 								<li><a href='<?php echo base_url()?>admin/data_diklat/edit_diklat_pkwt?id=<?php echo $dd['id_dik']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_diklat/proc_delete_diklat?id=<?php echo $dd['id_dik']?>'>Delete</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_diklat/proc_delete_diklat?id=<?php echo $dd['id_dik']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 							  </ul>
 							</div>
 						</tr>
@@ -180,7 +180,7 @@
 								  </button>
 								  <ul class='dropdown-menu'>
 								<li><a href='<?php echo base_url()?>admin/data_sertifikasi/edit_sertifikasi_pkwt?id=<?php echo $ds['id_ser']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_sertifikasi/proc_delete_sertifikasi?id=<?php echo $ds['id_ser']?>'>Delete</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_sertifikasi/proc_delete_sertifikasi?id=<?php echo $ds['id_ser']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 								  </ul>
 								</div>
 							 </tr>
@@ -235,8 +235,8 @@
 									<span class='fa fa-angle-down'></span>
 								  </button>
 								  <ul class='dropdown-menu'>
-								<li><a href='<?php echo base_url()?>admin/data_keluarga/edit_keluarga_pkwt?id=<?php echo $dk['id_kel']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_keluarga/proc_delete_keluarga?id=<?php echo $dk['id_kel']?>'>Delete</a></li>
+									<li><a href='<?php echo base_url()?>admin/data_keluarga/edit_keluarga_pkwt?id=<?php echo $dk['id_kel']?>'>Edit</a></li>
+									<li><a href='<?php echo base_url()?>admin/data_keluarga/proc_delete_keluarga?id=<?php echo $dk['id_kel']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 								  </ul>
 								</div>
 							</tr>
@@ -247,7 +247,7 @@
 						  </table>
 					  </div>
 					  
-					  <button type="button" class="btn btn-info right" onclick="location.href='<?php echo base_url()?>admin/data_keluarga/input_keluarga_pkwt?id=<?php echo $data_peg['id_peg'];?>'">
+					  <button type="button" class="btn btn-info right" onClick="location.href='<?php echo base_url()?>admin/data_keluarga/input_keluarga_pkwt?id=<?php echo $data_peg['id_peg'];?>'">
 					    <span class="fa fa-edit"></span> Tambah Data
 					  </button></br></br>
 					</div>
@@ -261,3 +261,4 @@
 	
 </div>
 <!--end: Content  -->
+

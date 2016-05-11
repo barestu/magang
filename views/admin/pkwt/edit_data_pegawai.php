@@ -22,10 +22,19 @@
 				<div class="col-sm-4"><input type="hidden" name="id_peg" maxlength="20" value="<?php echo $row['id_peg']?>" class="form-control" required readonly></div>
 				<div class="form-group"><label class="col-sm-2 control-label text-right">No. NPWP</label>
 				  <div class="col-sm-4"><input type="text" name="no_npwp" maxlength="20" value="<?php echo $row['no_npwp']?>" class="form-control" required ></div>
-				</div><div class="form-group"><label class="col-sm-2 control-label text-right">No. Kontrak</label>
+				</div>
+				<div class="form-group"><label class="col-sm-2 control-label text-right">No. Kontrak</label>
 				  <div class="col-sm-4"><input type="text" name="no_kontrak" maxlength="20" value="<?php echo $row['no_kontrak']?>" class="form-control" required ></div>
-				</div><div class="form-group"><label class="col-sm-2 control-label text-right">NIP</label>
-				  <div class="col-sm-4"><input type="text" name="nip" maxlength="20" value="<?php echo $row['nip']?>" class="form-control" required ></div>
+				</div>
+				<div class="form-group"><label class="col-sm-2 control-label text-right">NIP</label>
+				  <div class="col-sm-4">
+				    <select name="nip" class="form-control" required>
+					  <option value="<?php echo $row['nip']?>"><?php echo $row['nip']?></option>
+					  <option value="KONTRAK">KONTRAK</option>
+					  <option value="OUTSOURCING">OUTSOURCING</option>
+					  <option value="PENSIUN PLN">PENSIUN PLN</option>
+					</select>
+				  </div>
 				</div>
 				<div class="form-group"><label class="col-sm-2 control-label text-right">Nama</label>
 				  <div class="col-sm-6"><input type="text" name="nama" maxlength="48" value="<?php echo $row['nama']?>" class="form-control" required></div>
