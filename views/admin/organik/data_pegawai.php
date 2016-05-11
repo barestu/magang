@@ -133,7 +133,7 @@
 							  </button>
 							  <ul class='dropdown-menu'>
 								<li><a href='<?php echo base_url()?>admin/data_pendidikan/edit_pendidikan?id=<?php echo $dp['id_pen']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_pendidikan/proc_delete_pendidikan?id=<?php echo $dp['id_pen']?>'>Delete</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_pendidikan/proc_delete_pendidikan?id=<?php echo $dp['id_pen']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 							  </ul>
 							</div>
 						</tr>
@@ -184,7 +184,7 @@
 							  </button>
 							  <ul class='dropdown-menu'>
 								<li><a href='<?php echo base_url()?>admin/data_diklat/edit_diklat?id=<?php echo $dd['id_dik']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_diklat/proc_delete_diklat?id=<?php echo $dd['id_dik']?>'>Delete</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_diklat/proc_delete_diklat?id=<?php echo $dd['id_dik']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 							  </ul>
 							</div>
 						</tr>
@@ -227,7 +227,7 @@
 								  </button>
 								  <ul class='dropdown-menu'>
 								<li><a href='<?php echo base_url()?>admin/data_sertifikasi/edit_sertifikasi?id=<?php echo $ds['id_ser']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_sertifikasi/proc_delete_sertifikasi?id=<?php echo $ds['id_ser']?>'>Delete</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_sertifikasi/proc_delete_sertifikasi?id=<?php echo $ds['id_ser']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 								  </ul>
 								</div>
 							 </tr>
@@ -279,7 +279,7 @@
 								  </button>
 								  <ul class='dropdown-menu'>
 									<li><a href='<?php echo base_url()?>admin/data_mutasi/edit_mutasi?id=<?php echo $dm['id_mut']?>'>Edit</a></li>
-									<li><a href='<?php echo base_url()?>admin/data_mutasi/proc_delete_mutasi?id=<?php echo $dm['id_mut']?>'>Delete</a></li>
+									<li><a href='<?php echo base_url()?>admin/data_mutasi/proc_delete_mutasi?id=<?php echo $dm['id_mut']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 								  </ul>
 								</div>
 						  </tr>
@@ -332,7 +332,7 @@
 							  </button>
 							  <ul class='dropdown-menu'>
 								<li><a href='<?php echo base_url()?>admin/data_talenta/edit_talenta?id=<?php echo $dt['id_talenta']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_talenta/proc_delete_talenta?id=<?php echo $dt['id_talenta']?>'>Delete</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_talenta/proc_delete_talenta?id=<?php echo $dt['id_talenta']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 							  </ul>
 							</div>
 						</tr>
@@ -387,7 +387,7 @@
 								  </button>
 								  <ul class='dropdown-menu'>
 								<li><a href='<?php echo base_url()?>admin/data_keluarga/edit_keluarga?id=<?php echo $dk['id_kel']?>'>Edit</a></li>
-								<li><a href='<?php echo base_url()?>admin/data_keluarga/proc_delete_keluarga?id=<?php echo $dk['id_kel']?>'>Delete</a></li>
+								<li><a href='<?php echo base_url()?>admin/data_keluarga/proc_delete_keluarga?id=<?php echo $dk['id_kel']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 								  </ul>
 								</div>
 							</tr>
