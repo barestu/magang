@@ -7,8 +7,10 @@ class Pegawai_pkwt extends CI_Controller {
 		if ($this->session->userdata('username')=="") {
 			redirect('login');
 		} elseif ($this->session->userdata('level')=="user") {
-			echo "<script>alert('Anda tidak memiliki hak untuk mengakses halaman ini!')</script>";
 			redirect('login');
+		}
+		elseif ($this->session->userdata('level')=="Adm.organik") {
+			echo "<script>alert('Anda tidak memiliki hak akses halaman ini!');history.go(-1);</script>";
 		}
 		$this->load->helper('text');
 		$this->load->model('model_pkwt'); //panggil model buat nampilin data pegawai

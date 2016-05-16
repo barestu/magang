@@ -15,6 +15,7 @@ class Data_pegawai_pkwt extends CI_Controller {
 		$this->load->model('model_diklat'); //panggil model buat nampilin data diklat
 		$this->load->model('model_sertifikasi'); //panggil model buat nampilin data sertif
 		$this->load->model('model_keluarga'); //panggil model buat nampilin data keluarga
+		$this->load->model('model_proyek'); //panggil model buat nampilin data proyek
 	}
 	
 	// INDEX
@@ -27,6 +28,7 @@ class Data_pegawai_pkwt extends CI_Controller {
 		$data['data_diklat'] = $this->model_diklat->getDataAll($id);
 		$data['data_sertifikasi'] = $this->model_sertifikasi->getDataAll($id);
 		$data['data_keluarga'] = $this->model_keluarga->getDataAll($id);
+		$data['data_proyek'] = $this->model_proyek->getDataAll($id);
 		
 		$this->load->view('admin/layout/wrapper', $data);
 	}
