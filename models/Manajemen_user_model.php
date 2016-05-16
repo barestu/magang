@@ -49,6 +49,7 @@ public function form_edit() {
 public function proc_edit() {
 			$id = $this->input->post("id_user_login");		
 			$passlama = md5($this->input->post("password"));
+			$gantipass = $this->input->post("passwordbaru");
 
  			$this->db->select('*');
  			$this->db->from('tbl_user_login');
@@ -59,8 +60,9 @@ public function proc_edit() {
 				$input['email'] = $this->input->post("email");
 				$input['nip'] = $this->input->post("nip");
 				$input['level'] = $this->input->post("level");
+				if (!empty($gantipass)){
 				$input['password'] = md5($this->input->post("passwordbaru"));
-			
+				}			
 				$this->db->where('id_user_login', $id);        
 				$this->db->update("tbl_user_login",$input);
 				if($this->db->affected_rows() == 1) {

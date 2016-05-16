@@ -6,37 +6,25 @@ class Pegawai_pkwt extends CI_Controller {
 		parent::__construct();
 		if ($this->session->userdata('username')=="") {
 			redirect('login');
-		} elseif ($this->session->userdata('level')=="user") {
-			redirect('login');
-		}
-		elseif ($this->session->userdata('level')=="Adm.organik") {
-			echo "<script>alert('Anda tidak memiliki hak akses halaman ini!');history.go(-1);</script>";
-		}
+		} 
 		$this->load->helper('text');
 		$this->load->model('model_pkwt'); //panggil model buat nampilin data pegawai
 	}
 	
 	// INDEX
-	public function index() {
-		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/pkwt/pegawai_pkwt',
-				'username'=>$this->session->userdata('username'));
-		$data['data_pkwt'] = $this->model_pkwt->getAllData();
-		
-		$this->load->view('admin/layout/wrapper', $data);
-	}
+
 	
 	// INPUT
 	public function input() {
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/pkwt/input_data_pegawai',
+				'isi'=>'user/pkwt/input_data_pegawai',
 				'username'=>$this->session->userdata('username'));
 		$data['next_id'] = $this->model_pkwt->getNextId();
 		$data['data_bidang'] = $this->model_pkwt->getBidang();
 		$data['data_jabatan'] = $this->model_pkwt->getJabatan();
 		$data['data_direktorat'] = $this->model_pkwt->getDirektorat();
 		
-		$this->load->view('admin/layout/wrapper', $data);
+		$this->load->view('user/layout/wrapper', $data);
 	}
 	
 	public function proc_input() {
@@ -54,14 +42,14 @@ class Pegawai_pkwt extends CI_Controller {
 		$id = $this->input->get('id');
 		
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/pkwt/edit_data_pegawai',
+				'isi'=>'user/pkwt/edit_data_pegawai',
 				'username'=>$this->session->userdata('username'));
 		$data['row'] = $this->model_pkwt->getData($id); // data pegawai yang sudah ada sebelumnya
 		$data['data_bidang'] = $this->model_pkwt->getBidang();
 		$data['data_jabatan'] = $this->model_pkwt->getJabatan();
 		$data['data_direktorat'] = $this->model_pkwt->getDirektorat();
 				
-		$this->load->view('admin/layout/wrapper', $data);
+		$this->load->view('user/layout/wrapper', $data);
 	}
 	
 	public function proc_edit() {
@@ -72,7 +60,7 @@ class Pegawai_pkwt extends CI_Controller {
 		if ($edit1 || $edit2 == TRUE) {
 			echo "<script>alert('Data berhasil diperbaharui!');history.go(-2);</script>";
 		} elseif ($edit1 || $edit2 == FALSE) {
-			echo "<script>alert('Data gagal diperbaharui!');history.go(-1);</script>";
+			echo "<script>alert('Data gagal diperbaharui!');history.go(-2);</script>";
 		}
 	}
 	
@@ -88,12 +76,6 @@ class Pegawai_pkwt extends CI_Controller {
 		}
 	}
 	
-	// LOGOUT
-	public function logout() {
-		$this->session->unset_userdata('username');
-		$this->session->unset_userdata('level');
-		session_destroy();
-		redirect('login');
-	}
+	
 }
 ?>

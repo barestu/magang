@@ -39,62 +39,102 @@
 			<div id="tabsDemo4Content" class="tab-content tab-content-v3">
 			
 			  <!--Tab Data Pegawai-->
-			  <div role="tabpanel" class="tab-pane fade active in" id="tabs-demo4-area1" aria-labelledby="tabs-demo4-area1">
-				<div class="form-group"><label class="col-sm-2 control-label">NIP</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['nip'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Nama</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['nama'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Jabatan</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['nama_jab'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Bidang</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['nama_bid'];?></p></div>
-				</div></br></br>		
-				<div class="form-group"><label class="col-sm-2 control-label">Direktorat</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['nama_direktorat'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Tanggal Masuk</label>
-				  <div class="col-sm-4"><p><?php echo date('d-m-Y',strtotime($data_peg['tgl_masuk']));?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Tanggal Angkat</label>
-				  <div class="col-sm-4"><p><?php echo date('d-m-Y',strtotime($data_peg['tgl_angkat']));?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">No. SK Pensiun</label>
-				  <div class="col-sm-4"><p> - </p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Tempat, Tanggal Lahir</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['tempat_lahir'].", ".date('d-m-Y',strtotime($data_peg['tgl_lahir']));?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Alamat</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['alamat'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Jenis Kelamin</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['jenis_kelamin'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Agama</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['agama'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">No. Telepon</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['no_telp'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Email 1</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['email'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Email 2</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['email2'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Status</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['status'];?></p></div>
-				</div></br></br>
-				<div class="form-group"><label class="col-sm-2 control-label">Jumlah Keluarga</label>
-				  <div class="col-sm-4"><p><?php echo $data_peg['jml_keluarga'];?></p></div>
-				</div></br></br>
+			  <div role="tabpanel" class="profile-v1 tab-pane fade active in" id="tabs-demo4-area1" aria-labelledby="tabs-demo4-area1"></br>
+				<div class="col-md-12 col-sm-12 profile-v1-wrapper">
+					<div class="col-md-9  profile-v1-cover-wrap" style="padding-right:0px;">
+						<div class="profile-v1-pp">
+						  <img src="<?php echo base_url()?>asset/img/avatar.jpg"/>
+						  <h2><?php echo $data_peg['nama'];?></h2>
+						  <button type="button" class="btn btn-info" onclick="location.href='#'">
+							<span class="fa fa-camera"></span> Ganti Foto Profil
+						  </button></br></br>
+						  <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url()?>admin/cv_organik/index?id=<?php echo $data_peg['id_peg'];?>'">
+							<span class="fa fa-edit"></span> Curriculum Vitae
+						  </button>
+						</div>
+						<div class="col-md-12 profile-v1-cover">
+						  <img src="<?php echo base_url()?>asset/img/bg1.jpg" class="img-responsive">
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12 padding-0 profile-v1-right">
+						<div class="col-md-6 col-sm-4 profile-v1-right-wrap padding-0">
+						  <div class="col-md-12 padding-0 sub-profile-v1-right text-center sub-profile-v1-right1">
+							  <h1>51K</h1>
+							  <p>Followers</p>
+						  </div>
+						</div>
+						<div class="col-md-6 col-sm-4 profile-v1-right-wrap padding-0">
+							<div class="col-md-12 sub-profile-v1-right text-center sub-profile-v1-right2">
+							   <h1>609</h1>
+							   <p>Following</p>
+							</div>
+						</div>
+						<div class="col-md-12 col-sm-4 profile-v1-right-wrap padding-0">
+							<div class="col-md-12 sub-profile-v1-right text-center sub-profile-v1-right3">
+							  <h1>82001</h1>
+							  <p>Post</p>
+							</div>
+						</div>
+					</div>
+				</div>
 				
-				<button type="button" class="btn btn-success right" onclick="location.href='<?php echo base_url()?>admin/pegawai_organik/edit?id=<?php echo $data_peg['id_peg'];?>'">
-				  <span class="fa fa-edit"></span> Edit Data Pegawai
-				</button>
+				<div class="col-md-12">
+					<div class="form-group"><label class="col-sm-2 control-label">NIP</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['nip'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Nama</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['nama'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Jabatan</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['nama_jab'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Bidang</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['nama_bid'];?></p></div>
+					</div></br></br>		
+					<div class="form-group"><label class="col-sm-2 control-label">Direktorat</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['nama_direktorat'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Tanggal Masuk</label>
+					  <div class="col-sm-4"><p><?php echo date('d-m-Y',strtotime($data_peg['tgl_masuk']));?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Tanggal Angkat</label>
+					  <div class="col-sm-4"><p><?php echo date('d-m-Y',strtotime($data_peg['tgl_angkat']));?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">No. SK Pensiun</label>
+					  <div class="col-sm-4"><p> - </p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Tempat, Tanggal Lahir</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['tempat_lahir'].", ".date('d-m-Y',strtotime($data_peg['tgl_lahir']));?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Alamat</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['alamat'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Jenis Kelamin</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['jenis_kelamin'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Agama</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['agama'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">No. Telepon</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['no_telp'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Email 1</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['email'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Email 2</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['email2'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Status</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['status'];?></p></div>
+					</div></br></br>
+					<div class="form-group"><label class="col-sm-2 control-label">Jumlah Keluarga</label>
+					  <div class="col-sm-4"><p><?php echo $data_peg['jml_keluarga'];?></p></div>
+					</div></br></br>
+					
+					<button type="button" class="btn btn-success right" onclick="location.href='<?php echo base_url()?>admin/pegawai_organik/edit?id=<?php echo $data_peg['id_peg'];?>'">
+					  <span class="fa fa-edit"></span> Edit Data Pegawai
+					</button>
+				</div>
 			  </div>
 			  <!--End of Tab Data Pegawai-->
 			  

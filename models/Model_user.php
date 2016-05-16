@@ -7,6 +7,14 @@
 			return $query;
 		}
 
+	public function cari_id_status($nip) {
+		$this->db->select('id_status');
+			$this->db->from('tbl_pegawai');
+			$this->db->where('nip', $nip);
+			$idstat = $this->db->get();			
+
+	return $idstat->row('id_status');
+	}
 	
 	public function sign_up() {
 		$query = $this->db->query("SELECT MAX(id_user_login) AS max  FROM tbl_user_login");
