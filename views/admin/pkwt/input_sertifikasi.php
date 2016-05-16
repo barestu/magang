@@ -60,17 +60,3 @@
 
 	</div>
 <!-- end isi data pegawai -->
-
-<!-- buat list tahun -->
-<script>
-  var start = 1970;
-  var end = new Date().getFullYear();
-  var options = "";
-  for (i=1; i<=1; i++) {
-  options += "<option></option>";		
-	for(var year = start ; year <= end; year++){
-		options += "<option>"+ year +"</option>";
-	}
-  }
-  document.getElementById("yearpicker").innerHTML = options;
-</script>
