@@ -6,9 +6,6 @@ class Data_pendidikan extends CI_Controller {
 		parent::__construct();
 		if ($this->session->userdata('username')=="") {
 			redirect('login');
-		} elseif ($this->session->userdata('level')=="user") {
-			echo "<script>alert('Anda tidak memiliki hak untuk mengakses halaman ini!')</script>";
-			redirect('login');
 		}
 		$this->load->helper('text');
 		$this->load->model('model_pendidikan'); //panggil model buat nampilin data pendidikan

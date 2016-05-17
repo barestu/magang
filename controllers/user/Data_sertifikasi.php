@@ -6,9 +6,6 @@ class Data_sertifikasi extends CI_Controller {
 		parent::__construct();
 		if ($this->session->userdata('username')=="") {
 			redirect('login');
-		} elseif ($this->session->userdata('level')=="user") {
-			echo "<script>alert('Anda tidak memiliki hak untuk mengakses halaman ini!')</script>";
-			redirect('login');
 		}
 		$this->load->helper('text');
 		$this->load->model('model_sertifikasi'); //panggil model buat nampilin data sertifikasi
