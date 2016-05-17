@@ -4,17 +4,18 @@ class Model_data_organik extends CI_Model {
 	$this->load->database();
  }
  
-  //function di pakai oleh user
+ //function di pakai oleh user
  public function cari_id() {
-
-$nip = $this->session->userdata('nip');
+	$nip = $this->session->userdata('nip');
+	
 	$this->db->select('id_peg');
 			$this->db->from('tbl_pegawai');
 			$this->db->where('nip', $nip);
 			$idpeg = $this->db->get();			
 
 	return $idpeg->row('id_peg');
- }//end of function
+ }
+ //end of function
  
  // Ambil data pegawai yang ditentukan
  public function getData($id) {
