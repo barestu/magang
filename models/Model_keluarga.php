@@ -13,7 +13,6 @@ class Model_keluarga extends CI_Model {
 	$query = $this->db->get();
 	
 	return $query->result_array();
-	 
  }
  
  public function getData($id) {
