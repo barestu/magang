@@ -1,77 +1,63 @@
 <!-- start: Content -->
-    <div class="panel invoice-v1-content" id="printableArea">
-        <div class="panel-body">
-            <div class="col-md-12 invoice-v1-header">
-              <div class="col-md-12">
-                <h1><b>INVOICE</b></h1>
-              </div>
-              <div class="col-md-12">
-                <h4>
-                <address>
-                  <strong>Invoice #: 123</strong><br>
-                  Created: July 28, 2014<br>
-                  Due: July 28, 2015<br>
-                </address>
-                </h4>
-              </div>
-            </div>
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <h4>
-                    <address>
-                      <strong>Miminium, Inc.</strong><br>
-                      1234 Mimin Street, Suite 900<br>
-                      Miminium City, CA 94103<br>
-                      <abbr title="Phone">P:</abbr> (123) 456-7890
-                    </address>
-                    </h4>
-                </div>
-                <div class="col-md-6 text-right">
-                    <h4>
-                    <address>
-                      <strong>AlfaMiminium Corp</strong><br>
-                      Akihiko Avaron<br>
-                      akihiko.avaron@gmail.com<br>
-                    </address>
-                    </h4>
-                </div>
-            </div>
-            <div class="col-md-12 padding-0">
-                <div class="responsive-table">
-                    
-                   <table class="table table-striped">
-                    <tr>
-                      <th>Item</th>
-                      <th>Qty</th>
-                      <th>Price</th>
-                      <th>Total</th>
-                    </tr>
-                    <tr>
-                      <td>Jquery Plugin</td>
-                      <td>---</td>
-                      <td>---</td>
-                      <td>---</td>
-                    </tr>
-                    <tr>
-                      <td>Javascript Linter</td>
-                      <td>---</td>
-                      <td>---</td>
-                      <td>---</td>
-                    </tr>
-                    <tr>
-                      <td>Mobile Designer</td>
-                      <td>---</td>
-                      <td>---</td>
-                      <td>---</td>
-                    </tr>
-                    <tr>
-                      <th colspan="3">Total</th>
-                      <td>----</td>
-                    </tr>
-                </table>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="panel invoice-v1-content" id="printableArea">
+	<div class="panel-body">
+		<div class="col-md-12">
+		  <div>
+		    <label class="col-sm-6 control-label"><h3>CURRICULUM VITAE</h3></label>                          
+		  </div></br></br>
+		</div>
+		
+		<div class="col-md-10">
+		  <table class="table-borderless">
+			<tr>
+			  <td><b>1.</b></td><td><b>Proposed Position</b></td><td>:</td>
+			  <td>Civil Engineering</td>
+			</tr>
+			<tr>
+			  <td><b>2.</b></td><td><b>Name of Firm</b></td><td>:</td>
+			  <td>PT. Prima Layanan Nasional Enjiniring</td>
+			</tr>
+			<tr>
+			  <td><b>3.</b></td><td><b>Name of Personel</b></td><td>:</td>
+			  <td>Andriyanto</td>
+			</tr>
+			<tr>
+			  <td><b>4.</b></td><td><b>Date of Birth</b></td><td>:</td>
+			  <td>October 2nd 1983</td>
+			  <td><b>Nationality</b></td><td>:</td>
+			  <td>Indonesian</td>
+			</tr>
+			<tr>
+			  <td><b>5.</b></td><td><b>Proposed Position</b></td><td>:</td>
+			  <td>Civil Engineering</td>
+			</tr>
+		  </table>
+		  
+		  <table class="table-borderless">
+			<tr>
+			  <td><b>6.</b></td><td><b>Membership of Professional Associations:</b></td>
+			</tr>
+			<tr>
+			  <td></td><td>- Insinyur Professional Pratama, certified by The Institution Of Engineers Indonesia (PII), 2010</td>
+			</tr>
+		  </table>
+		  
+		  <table class="table-borderless">
+			<tr>
+			  <td><b>7.</b></td><td><b>Proficiency Training:</b></td>
+			</tr>
+			<tr>
+			  <td></td><td>- STAD PRO 2000 Training- Warren Consulting and Construction, 2010</td>
+			</tr>
+			<tr>
+			  <td></td><td>- Financial Planning - PT Primasi Assessment, Training and Development, 2010</td>
+			</tr>
+			<tr>
+			  <td></td><td>- Personal Empowerment Training - PT Psiko Utama, 2010</td>
+			</tr>
+		  </table>
+		</div>
+	</div>
 </div>
-    <!-- end: content -->
+</div>
+<!-- end: content -->

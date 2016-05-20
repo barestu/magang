@@ -306,25 +306,23 @@
 							<thead>
 							  <tr>
 								<th class="no">No.</th>
-								<th>Nama</th>
-								<th>Hubungan Keluarga</th>
-								<th>Jenis Kelamin</th>
-								<th>Tanggal Lahir</th>
-								<th>Keterangan</th>
+								<th>Nama Proyek</th>
+								<th>Tahun Proyek</th>
+								<th>Lokasi Proyek</th>
+								<th>Jabatan</th>
 								<th class="fix">Aksi</th> 
 							  </tr>
 							</thead>
 							<?php 
 							$no=1;
-							foreach($data_keluarga as $dk) {
+							foreach($data_proyek as $dpr) {
 							?>
 							<tr>
 							 <td class='mid'><?php echo $no ?></td>
-							 <td class='mid'><?php echo $dk['nama_kel'] ?></td>
-							 <td class='mid'><?php echo $dk['hub_kel'] ?></td>
-							 <td class='mid'><?php echo $dk['jk_kel'] ?></td>
-							 <td class='mid'><?php echo date('d-m-Y',strtotime($dk['tgl_kel'])); ?></td>
-							 <td class='mid'><?php echo $dk['ket_kel'] ?></td>
+							 <td class='mid'><?php echo $dpr['nama_proyek'] ?></td>
+							 <td class='mid'><?php echo $dpr['mulai_proyek'] ?> - <?php echo $dpr['berakhir_proyek'] ?></td>
+							 <td class='mid'><?php echo $dpr['lokasi_proyek'] ?></td>
+							 <td class='mid'><?php echo $dpr['jabatan_proyek'] ?></td>
 							 <td> 
 								<div class='btn-group' role='group'>
 								  <button type='button' class='btn  dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -332,8 +330,8 @@
 									<span class='fa fa-angle-down'></span>
 								  </button>
 								  <ul class='dropdown-menu'>
-									<li><a href='<?php echo base_url()?>admin/data_proyek/edit_proyek?id=<?php echo $dk['id_kel']?>'>Edit</a></li>
-									<li><a href='<?php echo base_url()?>admin/data_proyek/proc_delete_proyek?id=<?php echo $dk['id_kel']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
+									<li><a href='<?php echo base_url()?>admin/data_proyek/edit_proyek?id=<?php echo $dpr['id_proyek']?>'>Edit</a></li>
+									<li><a href='<?php echo base_url()?>admin/data_proyek/proc_delete_proyek?id=<?php echo $dpr['id_proyek']?>' onClick="return confirm('Are you sure?');">Delete</a></li>
 								  </ul>
 								</div>
 							</tr>
@@ -349,7 +347,7 @@
 					  </button></br></br>
 					</div>
                   </div>
-			  <!--End of Tab Data Keluarga-->
+			  <!--End of Tab Riwayat Proyek-->
 			  
 			</div>
 		</div>

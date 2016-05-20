@@ -14,6 +14,7 @@
     <link href="<?php echo base_url(); ?>asset/css/plugins/animate.min.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo base_url(); ?>asset/css/plugins/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo base_url(); ?>asset/css/plugins/datatables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo base_url(); ?>asset/css/plugins/icheck/skins/flat/red.css"rel="stylesheet" type="text/css" />
 	<link href="<?php echo base_url(); ?>asset/css/style.css" rel="stylesheet">
 	<!-- end: Css -->
 

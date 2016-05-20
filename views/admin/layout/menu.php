@@ -19,12 +19,22 @@
                       </a>
                       <ul class="nav nav-list tree">
                         <li><a href="<?php echo base_url(); ?>admin/pegawai_organik">Pegawai Organik</a></li>
-                        <li><a href="#">Pegawai PKWT</a></li>
+                        <li><a href="<?php echo base_url(); ?>admin/pegawai_pkwt">Pegawai PKWT</a></li>
                       </ul>
                     </li>
                     <li class="ripple">
                       <a class="tree-toggle nav-header">
-                        <span class="fa fa-file-excel-o"></span> Laporan Pegawai
+                        <span class="fa fa-file-text-o"></span> CV Pegawai
+                        <span class="fa-angle-right fa right-arrow text-right"></span>
+                      </a>
+                      <ul class="nav nav-list tree">
+                        <li><a href="<?php echo base_url(); ?>admin/cv_organik/index">CV Organik</a></li>
+                        <li><a href="<?php echo base_url(); ?>admin/cv_pkwt/index">CV PKWT</a></li>
+                      </ul>
+                    </li>
+                    <li class="ripple">
+                      <a class="tree-toggle nav-header">
+                        <span class="fa fa-book"></span> Laporan Pegawai
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
@@ -32,7 +42,6 @@
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_diklat/index">Diklat</a></li>
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_sertifikasi/index">Sertifikasi</a></li>
                         <li><a href="<?php echo base_url(); ?>admin/Laporan_pegawai_talenta/index">Data Talenta</a></li>
-                        <li><a href="<?php echo base_url(); ?>admin/Cv/index">Cetak CV</a></li>
                       </ul>
                     </li>
                     <li class='ripple'>
@@ -62,4 +71,3 @@
                 </div>
             </div>
 <!-- end: Left Menu -->
-</div>

@@ -10,12 +10,12 @@
     <script src="<?php echo base_url(); ?>asset/js/plugins/jquery.datatables.min.js"></script>
     <script src="<?php echo base_url(); ?>asset/js/plugins/datatables.bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>asset/js/plugins/chart.min.js"></script>
+	<script src="<?php echo base_url(); ?>asset/js/plugins/icheck.min.js"></script>
+	
 	<!-- buat logout -->
 	<div id="content">
         <div class="modal fade modal-v2" id="myModal" role="dialog">
           <div class="modal-dialog">
-    
-		<!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -38,7 +38,7 @@
      <script type="text/javascript">
         
         $(document).ready(function(){
-       $('#datatables-example').DataTable();
+        $('#datatables-example').DataTable();
         });     
 
         function Validate() {
