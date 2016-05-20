@@ -26,14 +26,5 @@ class Pengaturan_akun extends CI_Controller {
 			echo "<script>alert('Password gagal diubah!');history.go(-1);</script>";
 			}		
 	}
-	public function proc_edit_username() {								
-			$edit=$this->Pengaturan_akun_model->proc_edit_username();
-
-			if ($edit == TRUE) {
-			echo "<script>alert('Username berhasil diubah!');history.go(-2);</script>";
-			} elseif ($edit == FALSE) {
-			echo "<script>alert('Username gagal diubah!');history.go(-1);</script>";
-			}		
-	}
 }
 ?>

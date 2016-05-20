@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Data_mutasi extends CI_Controller {
+class Data_proyek extends CI_Controller {
 	// CONSTRUCT
 	public function __construct() {
 		parent::__construct();
@@ -8,22 +8,22 @@ class Data_mutasi extends CI_Controller {
 			redirect('login');
 		}
 		$this->load->helper('text');
-		$this->load->model('model_mutasi'); //panggil model buat nampilin data mutasi
+		$this->load->model('model_proyek'); //panggil model buat nampilin data proyek
 	}
 	
-	// INPUT DATA mutasi
-	public function input_mutasi() {
+	// INPUT DATA proyek PKWT
+	public function input_proyek() {
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/organik/input_mutasi',
+				'isi'=>'admin/pkwt/input_proyek',
 				'username'=>$this->session->userdata('username'),
 				'id_peg'=>$id);
 		
 		$this->load->view('admin/layout/wrapper', $data);
 	}
 	
-	public function proc_input_mutasi() {
-		$input = $this->model_mutasi->addData();
+	public function proc_input_proyek() {
+		$input = $this->model_proyek->addData();
 		
 		if ($input === TRUE) {
 			echo "<script>alert('Data berhasil ditambahkan!');history.go(-2);</script>";
@@ -31,21 +31,21 @@ class Data_mutasi extends CI_Controller {
 			echo "<script>alert('Data gagal ditambahkan!');history.go(-1);</script>";
 		}
 	}
-	
-	// EDIT DATA mutasi
-	public function edit_mutasi() { // controller form edit
+		
+	// EDIT DATA proyek PKWT
+	public function edit_proyek() { // controller form edit
 		$id = $this->input->get('id');
 		$data = array('title'=>'SIPEG', 
-				'isi'=>'admin/organik/edit_mutasi',
+				'isi'=>'admin/pkwt/edit_proyek',
 				'username'=>$this->session->userdata('username'));
-		$data['dm'] = $this->model_mutasi->getData($id);
+		$data['dpr'] = $this->model_proyek->getData($id);
 				
 		$this->load->view('admin/layout/wrapper', $data);
 	}
 	
-	public function proc_edit_mutasi() { // controller proses edit
+	public function proc_edit_proyek() { // controller proses edit
 		$id = $this->input->get('id');
-		$edit = $this->model_mutasi->editData($id);
+		$edit = $this->model_proyek->editData($id);
 		
 		if ($edit == TRUE) {
 			echo "<script>alert('Data berhasil diperbaharui!');history.go(-2);</script>";
@@ -54,10 +54,10 @@ class Data_mutasi extends CI_Controller {
 		}
 	}
 	
-	// DELETE DATA mutasi
-	public function proc_delete_mutasi() { // c proses hapus data
+	// DELETE DATA proyek
+	public function proc_delete_proyek() { // c proses hapus data
 		$id = $this->input->get('id');
-		$delete = $this->model_mutasi->deleteData($id);
+		$delete = $this->model_proyek->deleteData($id);
 		
 		if ($delete == TRUE) {
 			echo "<script>alert('Data berhasil dihapus!');history.go(-1);</script>";
