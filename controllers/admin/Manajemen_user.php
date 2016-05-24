@@ -28,10 +28,12 @@ class Manajemen_user extends CI_Controller {
 	public function proc_input() {			
  		$input=$this->Manajemen_user_model->proc_input();
 
- 		if ($input == TRUE) {
+ 		if ($input === TRUE) {
 			echo "<script>alert('Data berhasil ditambah!');history.go(-2);</script>";
-		} elseif ($input == FALSE) {
-			echo "<script>alert('Data gagal ditambah!');history.go(-1);</script>";
+		} elseif ($input === FALSE) {
+			echo "<script>alert('Username sudah dipakai!');history.go(-1);</script>";
+		} elseif ($input === 1) {
+			echo "<script>alert('NIP tidak terdaftar!');history.go(-1);</script>";
 		}
 
 	}
