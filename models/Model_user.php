@@ -22,8 +22,13 @@
 	}
 
 	public function input_sign_up() {	
+			$muka_email = "";
 			$userbaru = $this->input->post("username");
 			$nipvalid = $this->input->post("nip");
+			$muka_email= $this->input->post("email");
+			//penggabungan text menjjadi email
+			$buntut_email = "@plne-enjiniring.com";
+			$email = $muka_email.$buntut_email;
 
  			$this->db->select('username');
  			$this->db->from('tbl_user_login');
@@ -39,7 +44,7 @@
   				if ($query->num_rows() > 0){
 					$input['id_user_login'] = $this->input->post("id_user_login");
 					$input['username'] = $userbaru;				
-					$input['email'] = $this->input->post("email");
+					$input['email'] = $email;
 					$input['nip'] = $nipvalid;
 					$input['level'] = "user";
 					$input['password'] = md5($this->input->post("password"));
