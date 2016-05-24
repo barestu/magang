@@ -18,6 +18,7 @@ class Data_pegawai_organik extends CI_Controller {
 		$this->load->model('model_mutasi'); //panggil model buat nampilin data mutasi
 		$this->load->model('model_talenta'); //panggil model buat nampilin data talenta
 		$this->load->model('model_keluarga'); //panggil model buat nampilin data keluarga
+		$this->load->model('Upload_gambar_model'); //panggil model buat nampilin foto profil
 	}
 	
 	// INDEX
@@ -33,6 +34,7 @@ class Data_pegawai_organik extends CI_Controller {
 		$data['data_mutasi'] = $this->model_mutasi->getDataAll($id);
 		$data['data_talenta'] = $this->model_talenta->getDataAll($id);
 		$data['data_keluarga'] = $this->model_keluarga->getDataAll($id);
+		$data['nama_gambar'] = $this->Upload_gambar_model->show_ava($id);
 		
 		$this->load->view('admin/layout/wrapper', $data);
 	}
