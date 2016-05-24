@@ -23,6 +23,7 @@
                         <tr>
               <th>No.</th>                          
                           <th>NIP</th>
+                          <th>No.Kontrak</th>
               <th class="col-md-4">Nama</th>
                           <th>Status Pegawai</th>
                           <th>Berakhir Kontrak</th>              
@@ -34,6 +35,7 @@
             $no=1;
             foreach($kontrak_tempo->result_array() as $row) {
             $nip = $row['nip'];
+            $no_kontrak = $row['no_kontrak'];
             $nama = $row['nama'];
             $nama_status = $row['nama_status'];            
             $akhir_kontrak = $row['berakhir_kontrak'];
@@ -42,6 +44,7 @@
             <tr>
                 <td class='mid'><?php echo $no; ?></td>
                   <td class='mid'><?php echo $nip; ?></td>
+                  <td class='mid'><?php echo $no_kontrak; ?></td>
                   <td class='mid'><?php echo $nama; ?></td>
                   <td class='mid'><?php echo $nama_status; ?></td>
                   <td class='mid'><?php echo date('d-m-Y',strtotime($akhir_kontrak)); ?></td>
@@ -53,7 +56,7 @@
                     <span class='fa fa-angle-down'></span>
                   </button>
                   <ul class='dropdown-menu'>
-                  <li><a href='<?php echo base_url()?>admin/pegawai_pkwt/edit'>Edit</a></li>            
+                  <li><a href='<?php echo base_url()?>admin/pegawai_pkwt/edit?id=<?php echo $row['id_peg']?>'>Edit</a></li>            
                   </ul>
                 </div>
                 </td>
