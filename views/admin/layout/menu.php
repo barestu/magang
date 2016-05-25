@@ -1,4 +1,4 @@
-<div class="container-fluid mimin-wrapper">  
+<div class="container-fluid mimin-wrapper">
     <!-- start:Left Menu -->
             <div id="left-menu">
               <div class="sub-left-menu scroll">

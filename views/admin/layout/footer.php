@@ -40,11 +40,11 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Upload Gambar</h4>
+                <h4 class="modal-title">Upload Gambar (400 x 500 px) max.100kb</h4>
               </div>
               <div class="modal-body">
-                <form action="<?=base_url()?>admin/Upload_gambar?id=<?php echo $data_peg['id_peg'];?>" method="post" enctype="multipart/form-data"> 
-                <input class="btn btn-info" type="file" name="ava" /> 
+                <form action="<?=base_url()?>admin/Upload_gambar?id=<?php echo $data_peg['id_peg'];?>" method="post" enctype="multipart/form-data">
+                <input class="btn btn-info" type="file" name="ava" />
               </div>
               <div class="modal-footer">
                 <div class="col-sm-3 right"><input class="btn btn-info" type="submit" value="Ganti Foto"/></div>
