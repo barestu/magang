@@ -55,7 +55,7 @@ class Model_organik extends CI_Model {
 	if($this->db->affected_rows() > 0) {
 	$d3['id_peg'] = $this->input->post('id_peg');
 	$d3['nama_gambar'] = "avatar.jpg";
-	$d3['tipe_gambar'] = "image/jpeg";
+	$d3['tipe_gambar'] = "image/jpg";
 	$d3['status_gambar'] = "default";
 	$this->db->insert('tb_upload_gambar', $d3);
 	

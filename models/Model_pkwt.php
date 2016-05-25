@@ -54,6 +54,14 @@ class Model_pkwt extends CI_Model {
 	$this->db->insert('tbl_pegawai', $d);
 	
 	if($this->db->affected_rows() > 0) {
+	$d3['id_peg'] = $this->input->post('id_peg');
+	$d3['nama_gambar'] = "avatar.jpg";
+	$d3['tipe_gambar'] = "image/jpg";
+	$d3['status_gambar'] = "default";
+	$this->db->insert('tb_upload_gambar', $d3);
+
+	
+		if($this->db->affected_rows() > 0) {
 		$d2['id_peg'] = $this->input->post('id_peg');
 		$d2['no_npwp'] = $this->input->post('no_npwp');
 		$d2['no_kontrak'] = $this->input->post('no_kontrak');
@@ -71,7 +79,7 @@ class Model_pkwt extends CI_Model {
 		if($this->db->affected_rows() > 0) {
 			return TRUE;
 		}
-	} else {
+	}} else {
 		return FALSE;
 	}	
  }
@@ -137,6 +145,7 @@ class Model_pkwt extends CI_Model {
 	 $this->db->delete('tb_diklat', array('id_peg' => $id));
 	 $this->db->delete('tb_sertifikasi', array('id_peg' => $id));
   	 $this->db->delete('tb_keluarga', array('id_peg' => $id));
+  	 $this->db->delete('tb_upload_gambar', array('id_peg' => $id));
 	$this->db->trans_complete(); # completing transaction
 	
 	if($this->db->trans_status() === FALSE) {
