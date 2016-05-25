@@ -12,7 +12,7 @@
 		</div>
 	  </div>
 	</div>
-	
+	<?=$this->session->flashdata('pesan')?>
 	<div class="col-md-12">
 	  <div class="panel">
 		<div class="panel-body">
