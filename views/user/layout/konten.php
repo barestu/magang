@@ -5,3 +5,4 @@ if ($isi) {
 	$this->load->view($isi);
 }
 ?>
+</div>

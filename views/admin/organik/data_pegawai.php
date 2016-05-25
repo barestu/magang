@@ -12,7 +12,7 @@
 		</div>
 	  </div>
 	</div>
-	
+	<?=$this->session->flashdata('pesan')?>
 	<div class="col-md-12">
 	  <div class="panel">
 		<div class="panel-body">
@@ -43,12 +43,19 @@
 				<div class="col-md-12 col-sm-12 profile-v1-wrapper">
 					<div class="col-md-9  profile-v1-cover-wrap" style="padding-right:0px;">
 						<div class="profile-v1-pp">
-						  <img src="<?php echo base_url()?>asset/img/avatar.jpg"/>
+
+						  <img src="<?php echo base_url()?>gallery/<?php echo $nama_gambar['nama_gambar'];?>"/>
 						  <h2><?php echo $data_peg['nama'];?></h2>
-						  <button type="button" class="btn btn-info" onclick="location.href='#'">
+
+						  
+						  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mygambar">
 							<span class="fa fa-camera"></span> Ganti Foto Profil
 						  </button></br></br>
-						  <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url()?>admin/cv_organik/index?id=<?php echo $data_peg['id_peg'];?>'">
+							
+						  <!--<button type="button" class="btn btn-info" onclick="location.href='#'">
+							<span class="fa fa-camera"></span> Ganti Foto Profil
+						  </button></br></br>-->
+						  <button type="button" class="btn btn-primary" style="margin-top:5px;" onclick="location.href='<?php echo base_url()?>admin/cv_organik/index?id=<?php echo $data_peg['id_peg'];?>'">
 							<span class="fa fa-edit"></span> Curriculum Vitae
 						  </button>
 						</div>

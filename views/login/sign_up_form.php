@@ -23,7 +23,7 @@
 <div class="container">
 
         <form class="form-signin" action="<?php echo base_url(); ?>login/input_sign_up" method="post" autocomplete="off">
-          <div class="panel periodic-login">
+          <div class="col-md-12 panel periodic-login">
               <span class="atomic-number"></span>
               <div class="panel-body text-center">
                   <h1 class="atomic-mass">SIPEG</h1>
@@ -36,8 +36,19 @@
                     <span class="bar"></span>
                     <label>Username</label>
                   </div>
+
+                  <div class="form-group form-animate-text">
+                  <div class="col-sm-8 right" style="margin-top:15px ;"><span>@plne-enjiniring.com</span>
+                  </div>
+                  <div style="margin-top:40px ;margin-right:168px;">
+                    <input type="text" class="form-text" pattern="[a-zA-Z0-9.^'_x22]+" name='email' required>
+                    <span class="bar"></span> 
+                    <label>Email</label>
+                  </div>                  
+                  </div>
+                     
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input type="password" class="form-text" id="txtPassword" pattern=".{6,}" title="6 atau lebih karakter" required>
+                    <input type="password" class="form-text" id="txtPassword" required>
                     <span class="bar"></span>
                     <label>Password</label>
                   </div>
@@ -46,16 +57,13 @@
                     <span class="bar"></span>
                     <label>Konfirmasi Password</label>
                   </div>
-                  <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                    <input type="email" class="form-text" name='email' required>
-                    <span class="bar"></span>
-                    <label>Email</label>
-                  </div> 
+
                   <div class="form-group form-animate-text" style="margin-top:40px !important;">
                     <input type="text" class="form-text" name='nip' required>
                     <span class="bar"></span>
                     <label>NIP</label>
-                  </div>                      
+                  </div> 
+
                    <?php
                             foreach($id->result_array() as $row);
                             $nextid = $row['max']; $nextid = $nextid+1;

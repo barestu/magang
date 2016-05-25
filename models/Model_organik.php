@@ -12,7 +12,6 @@ class Model_organik extends CI_Model {
 			AND id_status = 1
 			AND tbl_pegawai.id_bid = tb_bidang.id_bid
 			AND tbl_pegawai.id_direktorat = tb_direktorat.id_direktorat
-			AND tbl_pegawai.id_status = '1'
 			ORDER BY nip ASC");
 	
 	return $query->result_array();
@@ -52,8 +51,15 @@ class Model_organik extends CI_Model {
 	$d['status'] = $this->input->post('status');
 	$d['jml_keluarga'] = $this->input->post('jml_keluarga');
 	$this->db->insert('tbl_pegawai', $d);
-	
+
 	if($this->db->affected_rows() > 0) {
+	$d3['id_peg'] = $this->input->post('id_peg');
+	$d3['nama_gambar'] = "avatar.jpg";
+	$d3['tipe_gambar'] = "image/jpg";
+	$d3['status_gambar'] = "default";
+	$this->db->insert('tb_upload_gambar', $d3);
+	
+		if($this->db->affected_rows() > 0) {
 		$d2['id_peg'] = $this->input->post('id_peg');
 		$d2['tgl_masuk'] = $this->input->post('tgl_masuk');
 		$d2['tgl_angkat'] = $this->input->post('tgl_angkat');
@@ -61,7 +67,7 @@ class Model_organik extends CI_Model {
 		if($this->db->affected_rows() > 0) {
 			return TRUE;
 		}
-	} else {
+	}} else {
 		return FALSE;
 	}	
  }
@@ -121,6 +127,7 @@ class Model_organik extends CI_Model {
 	 $this->db->delete('tb_talenta', array('id_peg' => $id));
 	 $this->db->delete('tb_pendidikan', array('id_peg' => $id));
   	 $this->db->delete('tb_keluarga', array('id_peg' => $id));
+  	 $this->db->delete('tb_upload_gambar', array('id_peg' => $id));
 	$this->db->trans_complete(); # completing transaction
 	
 	if($this->db->trans_status() === FALSE) {
