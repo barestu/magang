@@ -12,6 +12,7 @@ class Upload_gambar extends CI_Controller {
 		}
 		$this->load->helper(array('form', 'url'));
 		$this->load->model('Upload_gambar_model');
+		$this->load->database();
 	}
 	
 	public function index(){
@@ -19,11 +20,11 @@ class Upload_gambar extends CI_Controller {
 		$id = $this->input->get('id');
 		$status_gambar = "custom";
 
-		$data['nama_gambar'] = $this->Upload_gambar_model->change_ava($id);
-		$gambar = $data['nama_gambar'];
-		if(!empty ($gambar)) {			
-		$path = './gallery/' .$data['nama_gambar'];	
+		$data= $this->Upload_gambar_model->change_ava($id);
+		if(!empty ($data->nama_gambar)) {			
+		$path = './gallery/' .$data->nama_gambar;	
    		unlink($path);
+   		$this->Upload_gambar_model->reset_ava($id);
 		}
 
 		$this->load->library('upload');
@@ -52,12 +53,17 @@ class Upload_gambar extends CI_Controller {
 
                 //pesan yang muncul jika berhasil diupload
                 if ($insert == TRUE) {
-					echo "<script>alert('Gambar berhasil diupload!');history.go(-1);</script>";
+					$this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-info\" id=\"alert\">Upload gambar berhasil!</div></div>");
+                echo "<script>history.go(-1);</script>";
+
 				} elseif ($insert == FALSE) {
-					echo "<script>alert('Gagal upload!');history.go(-1);</script>";
+					$this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Gagal upload!</div></div>");
+                echo "<script>history.go(-1);</script>";
+
 				}
             }elseif ( ! $this->upload->do_upload('ava')){
-                echo "<script>alert('Pilih file upload dahulu!');history.go(-1);</script>"; //jika gagal
+                $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Pilih file gambar dahulu!</div></div>");
+                echo "<script>history.go(-1);</script>";
            		 }
         
     }
