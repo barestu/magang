@@ -5,8 +5,7 @@ class Model_data_pkwt extends CI_Model {
  }
  //function di pakai oleh user
  public function cari_id() {
-
-$nip = $this->session->userdata('nip');
+	$nip = $this->session->userdata('nip');
 	$this->db->select('id_peg');
 			$this->db->from('tbl_pegawai');
 			$this->db->where('nip', $nip);

@@ -26,7 +26,7 @@ class Model_diklat extends CI_Model {
  
  public function addData() {
 	$d['id_peg'] = $this->input->post('id_peg');
-	$d['nama_dik'] = strtoupper($this->input->post('nama_dik'));
+	$d['nama_dik'] = $this->input->post('nama_dik');
 	$d['jenis_dik'] = $this->input->post('jenis_dik');
 	$d['tahun_dik'] = $this->input->post('tahun_dik');
 	$this->db->insert('tb_diklat', $d);
@@ -40,7 +40,7 @@ class Model_diklat extends CI_Model {
  
  public function editData($id) {
 	$d['id_peg'] = $this->input->post('id_peg');
-	$d['nama_dik'] = strtoupper($this->input->post('nama_dik'));
+	$d['nama_dik'] = $this->input->post('nama_dik');
 	$d['jenis_dik'] = $this->input->post('jenis_dik');
 	$d['tahun_dik'] = $this->input->post('tahun_dik');
 	$this->db->where('id_dik', $id);
