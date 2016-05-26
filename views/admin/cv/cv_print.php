@@ -35,7 +35,7 @@
 		  
 		  <table class="table-borderless">
 			<tr>
-			  <td><b>6.</b></td><td><b>Membership of Professional Associations:</b></td>
+			  <td><b>6.</b></td><td><b>Membership of Professional Associations : </b></td>
 			</tr>
 			<tr>
 			  <td></td><td>- Insinyur Professional Pratama, certified by The Institution Of Engineers Indonesia (PII), 2010</td>
@@ -56,6 +56,25 @@
 			  <td></td><td>- Personal Empowerment Training - PT Psiko Utama, 2010</td>
 			</tr>
 		  </table>
+		  
+		  <table class="table-borderless">
+			<tr>
+			  <td><b>8.</b></td><td><b>Countries of Work Experiences : </b>Indonesia</td>
+			</tr>
+		  </table>
+		  
+		  <table class="table-borderless">
+			<tr>
+			  <td><b>9.</b></td><td><b>Languages : </b></td><td>Speaking</td><td>Reading</td><td>Writing</td>
+			</tr>
+			<tr>
+			  <td></td><td>- Indonesian</td><td>Native</td><td>Native</td><td>Native</td>
+			</tr>
+			<tr>
+			  <td></td><td>- English</td><td>Very Good</td><td>Very Good</td><td>Very Good</td>
+			</tr>
+		  </table>
+		
 		</div>
 	</div>
 </div>

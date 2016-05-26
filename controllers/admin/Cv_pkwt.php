@@ -11,19 +11,23 @@ class Cv_pkwt extends CI_Controller {
 		$this->load->model('model_cv_pkwt');
 	}
 	
-	// INDEX
+	// INPUT CV
 	public function index() {
-		$id = $this->input->get('id');	
-			
+		$id = $this->input->get('id');
 		$data = array('title' => 'SIPEG',
- 			'isi' => 'admin/cv/cv_view',
+ 			'isi' => 'admin/cv/cv_input',
  			'username' => $this->session->userdata('username'));
 		$data['data_peg'] = $this->model_cv_pkwt->getDataPegawai($id);
 		$data['data_diklat'] = $this->model_cv_pkwt->getDataDiklat($id);
 		$data['data_sertifikasi'] = $this->model_cv_pkwt->getDataSertif($id);
 		$data['data_proyek'] = $this->model_cv_pkwt->getDataProyek($id);
 		
- 		$this->load->view('admin/cv/layout/wrapper', $data);
+ 		$this->load->view('admin/cv/layout/wrapper_input', $data);
+	}
+	
+	// PRINT CV
+	public function proc_input_cv_pkwt() {
+		
 	}
 	
 }

@@ -7,9 +7,9 @@ class Model_cv_pkwt extends CI_Model {
  // Data Pegawai
  public function getDataPegawai($id) {
 	$this->db->select('*');
-	$this->db->from('tbl_pegawai AS tp, tb_pegawai_organik AS to, tb_jabatan AS tj, tb_bidang AS tb, tb_direktorat AS td');
+	$this->db->from('tbl_pegawai AS tp, tb_pegawai_pkwt AS tpp, tb_jabatan AS tj, tb_bidang AS tb, tb_direktorat AS td');
 	$this->db->where('tp.id_peg', $id);
-	$this->db->where('tp.id_peg = to.id_peg');
+	$this->db->where('tp.id_peg = tpp.id_peg');
 	$this->db->where('tp.id_bid = tb.id_bid');
 	$this->db->where('tp.id_jab = tj.id_jab');
 	$this->db->where('tp.id_direktorat = td.id_direktorat');
