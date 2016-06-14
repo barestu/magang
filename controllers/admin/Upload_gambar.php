@@ -22,14 +22,14 @@ class Upload_gambar extends CI_Controller {
 
 		$data= $this->Upload_gambar_model->change_ava($id);
 		if(!empty ($data->nama_gambar)) {			
-		$path = './gallery/' .$data->nama_gambar;	
+		$path = './asset/img_peg/' .$data->nama_gambar;	
    		unlink($path);
    		$this->Upload_gambar_model->reset_ava($id);
 		}
 
 		$this->load->library('upload');
         $nmfile = "avatar_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
-        $config['upload_path'] = './gallery'; //path folder
+        $config['upload_path'] = './asset/img_peg'; //path folder
         $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
         $config['max_size'] = '2000'; //maksimum besar file 2000kb
         $config['max_width']  = '1288'; //lebar maksimum 1288 px
@@ -71,7 +71,7 @@ class Upload_gambar extends CI_Controller {
     $id = $this->input->get('id');
 
     $data['nama_gambar'] = $this->Upload_gambar_model->show_ava($id);
-    $path = $_SERVER['DOCUMENT_ROOT'].'/gallery/';
+    $path = $_SERVER['DOCUMENT_ROOT'].'/asset/img_peg/';
 	$files = glob($path.$data['nama_gambar']); // get file names
 	unlink($file);
 	}
