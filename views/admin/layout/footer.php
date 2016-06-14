@@ -120,7 +120,20 @@
        var audit_internal={$audit_internal}
        var mmr={$mmr}
        var pengawas_internal={$pengawas_internal}
-       var informasi_teknologi={$informasi_teknologi}";
+       var informasi_teknologi={$informasi_teknologi}
+            var project_dir ={$project_dir}
+            var project_manager ={$project_manager}
+            var ptl ={$ptl} 
+            var civil_engineer ={$civil_engineer}
+            var mechanical_engineer ={$mechanical_engineer}
+            var i_c ={$i_c}
+            var electrical_engineer ={$electrical_engineer}
+            var qa_qc ={$qa_qc}
+            var boiler ={$boiler}
+            var hse ={$hse}
+            var piping ={$piping}
+            var geodetic ={$geodetic}
+       ";
     ?>;
          
         var doughnutData = [
@@ -239,7 +252,7 @@
                 },
                 {
                     value: pengadaan,
-                    color: "#FFFFFF",
+                    color: "#c1e1f5",
                     highlight: "rgba(220,220,220,1)",
                     label: "Pengadaan"
                 },
@@ -270,12 +283,86 @@
 
             ];
 
-      
+            var doughnutData4 = [
+                
+                {
+                    value: project_dir,
+                    color: "#94D7E9",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Project Director"
+                },
+                {
+                    value: project_manager,
+                    color: "#FFDF42",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Project Manager"
+                },
+                {
+                    value: ptl,
+                    color: "#809CB1",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Project Team Leader"
+                },
+                {
+                    value: civil_engineer,
+                    color: "#E0B16D",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Civil Engineer"
+                },
+                {
+                    value: mechanical_engineer,
+                    color: "#272C2F",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Mechanical Engineer"
+                },
+                {
+                    value: i_c, 
+                    color: "#97242B",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Instrument & Control"
+                },
+                {
+                    value: electrical_engineer, 
+                    color: "#0D5BA5",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Electrical Engineer"
+                },
+                {
+                    value: qa_qc, 
+                    color: "#B5B038",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "QA/QC"
+                },
+                {
+                    value: boiler,
+                    color: "#D5D4DA",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Boiler"
+                },
+                {
+                    value: hse, 
+                    color: "#FF95AB",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "HSE"
+                },
+                {
+                    value: piping, 
+                    color: "#8D445F",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Piping"
+                },
+                {
+                    value: geodetic,
+                    color: "#01894B",
+                    highlight: "rgba(220,220,220,1)",
+                    label: "Geodetic Engineer"
+                }
+            ];
 
              window.onload = function(){               
 
-                var ctx2 = $(".pie-chart")[0].getContext("2d");
-                window.myPie = new Chart(ctx2).Pie(doughnutData, {
+                var ctx2 = $(".doughnut-chart2")[0].getContext("2d");
+                window.myDoughnut2 = new Chart(ctx2).Doughnut(doughnutData, {
                     responsive : true,
                     showTooltips: true
                 });               
@@ -288,6 +375,12 @@
 
                 var ctx3 = $(".pie-chart2")[0].getContext("2d");
                 window.myPie2 = new Chart(ctx3).Pie(doughnutData3, {
+                    responsive : true,
+                    showTooltips: true
+                });
+
+                var ctx4 = $(".pie-chart")[0].getContext("2d");
+                window.myPie = new Chart(ctx4).Pie(doughnutData4, {
                     responsive : true,
                     showTooltips: true
                 });
