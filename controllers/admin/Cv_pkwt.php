@@ -12,7 +12,7 @@ class Cv_pkwt extends CI_Controller {
 	}
 	
 	// INPUT CV
-	public function index() {
+	public function edit_cv() {
 		$id = $this->input->get('id');
 		$data = array('title' => 'SIPEG',
  			'isi' => 'admin/cv/cv_input',
@@ -26,7 +26,18 @@ class Cv_pkwt extends CI_Controller {
 	}
 	
 	// PRINT CV
-	public function proc_input_cv_pkwt() {
+	public function print_cv() {
+		$id = $this->input->get('id');
+		$data = array('title' => 'SIPEG',
+ 			'isi' => 'admin/cv/cv_print',
+ 			'username' => $this->session->userdata('username'));
+		$data['data_peg'] = $this->model_cv_pkwt->getDataPegawai($id);
+		$data['data_diklat'] = $this->model_cv_pkwt->getDataDiklat($id);
+		$data['data_sertifikasi'] = $this->model_cv_pkwt->getDataSertif($id);
+		$data['data_proyek'] = $this->model_cv_pkwt->getDataProyek($id);
+		
+ 		$this->load->view('admin/cv/layout/wrapper_input', $data);
+
 		
 	}
 	
