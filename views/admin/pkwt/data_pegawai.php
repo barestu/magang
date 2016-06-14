@@ -37,19 +37,27 @@
 				<div class="col-md-12 col-sm-12 profile-v1-wrapper">
 					<div class="col-md-9  profile-v1-cover-wrap" style="padding-right:0px;">
 						<div class="profile-v1-pp">
-						  <img src="<?php echo base_url()?>gallery/<?php echo $nama_gambar['nama_gambar'];?>"/>
+						  <img src="<?php echo base_url()?>asset/img_peg/<?php echo $nama_gambar['nama_gambar'];?>"/>
 						  <h2><?php echo $data_peg['nama'];?></h2>
 
 						  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#mygambar">
-							<span class="fa fa-camera"></span> Ganti Foto Profil
+							<span class="fa fa-camera"></span> Edit Foto Pegawai
 						  </button></br></br>
-						  
-						  <button type="button" class="btn btn-success" onclick="location.href='<?php echo base_url()?>admin/cv_pkwt/index?id=<?php echo $data_peg['id_peg'];?>'">
-							<span class="fa fa-edit"></span> Curriculum Vitae
-						  </button>
+
 						  <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url()?>admin/pegawai_pkwt/edit?id=<?php echo $data_peg['id_peg'];?>'">
 							<span class="fa fa-edit"></span> Edit Data Pegawai
 						  </button>
+
+						  <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class='fa fa-pencil-square-o'></span> Curriculum Vitae
+                              <span class="fa fa-angle-down"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+							  <li><a href='<?php echo base_url()?>admin/cv_pkwt/edit_cv?id=<?php echo $data_peg['id_peg'];?>'>Edit CV</a></li>
+							  <li><a href='<?php echo base_url()?>admin/cv_pkwt/print_cv?id=<?php echo $data_peg['id_peg'];?>'>Cetak CV</a></li>
+                            </ul>
+                          </div>			  
 						</div>
 						<div class="col-md-12 profile-v1-cover">
 						  <img src="<?php echo base_url()?>asset/img/bg1.jpg" class="img-responsive">
