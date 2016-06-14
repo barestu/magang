@@ -313,6 +313,188 @@ class Dashboard_model extends CI_Model {
  		}				
  			return $jumlah_bidang;
   }
-  
+
+//DATA CHART JABATAN
+  public function project_dir() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE tbl_pegawai.id_jab = tb_jabatan.id_jab 
+							AND nama_jab = 'Project Director'");
+ 			if ($query->num_rows() > 0){
+ 				$project_dir= $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$project_dir = 0;
+ 			}
+ 			return $project_dir;
+  }
+  public function project_manager() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE tbl_pegawai.id_jab = tb_jabatan.id_jab 
+							AND nama_jab = 'Project Manager'");
+ 			if ($query->num_rows() > 0){
+ 				$project_manager = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$project_manager = 0;
+ 			}
+ 			return $project_manager;
+  }
+  public function ptl() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Project Team Leader','Project Team Leader/Manager','PTL Jawa/Bali Crossing','Co. PTL')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$ptl = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$ptl = 0;
+ 			}
+ 			return $ptl;
+  }
+  public function civil_engineer() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Site Civil Engineer','Senior Engineer Sipil','Project Engineer Civil','Junior Engineer Teknik Sipil','Foundation Engineer','Enjinir Sipil','Civil Site Inspector','Civil Inspector','Civil Engineer Waterways','Civil Engineer','Enjinir Sipil','Assistant Civil Engineer')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$civil_engineer = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$civil_engineer = 0;
+ 			}
+ 			return $civil_engineer;
+  }
+  public function mechanical_engineer() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Site Mechanical Engineer','Senior Engineer Mesin','Mechanical Inspector','Mechanical Engineer','Inspector Mechanical Engineer','Enjinir Mesin','Assistant Engineer Teknik Mesin')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$mechanical_engineer = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$mechanical_engineer = 0;
+ 			}
+ 			return $mechanical_engineer;
+  }
+  public function i_c() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Instrument & Control Engineer','Project Engineer I&C','Assistant Engineer Teknik I&C')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$i_c = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$i_c = 0;
+ 			}
+ 			return $i_c;
+  }
+  public function electrical_engineer() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Site Electrical Engineer','Senior Engineer Listrik','Lead Engineer Electrical','Elektro - Mechaninal Engineer','Electrical Inspector','Electrical Engineer')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$electrical_engineer = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$electrical_engineer = 0;
+ 			}
+ 			return $electrical_engineer;
+  }
+  public function qa_qc() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Tim QA/QC','QA/QC Engineer','Junior Engineer QA/QC','Leader QA/QC Mechanical Engineer')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$qa_qc = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$qa_qc = 0;
+ 			}
+ 			return $qa_qc;
+  }
+  public function boiler() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Inspector Boiler')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$boiler = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$boiler = 0;
+ 			}
+ 			return $boiler;
+  }
+  public function hse() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('HSE Engineer')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$hse = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$hse = 0;
+ 			}
+ 			return $hse;
+  }
+  public function piping() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Piping Engineer')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$piping = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$piping = 0;
+ 			}
+ 			return $piping;
+  }
+  public function geodetic() {
+
+ $query = $this->db->query("SELECT id_peg
+							FROM tbl_pegawai ,tb_jabatan  
+							WHERE nama_jab IN('Geodetic Engineer')
+							AND tbl_pegawai.id_jab = tb_jabatan.id_jab ");
+ 			if ($query->num_rows() > 0){
+ 				$geodetic = $query->num_rows(); 				
+ 			}
+ 			elseif ($query->num_rows() < 1){
+ 				$geodetic = 0;
+ 			}
+ 			return $geodetic;
+  }
+  public function jumlah_jabatan() {
+
+ $query = $this->db->query("SELECT nama_jab
+							FROM tb_jabatan ");
+ 			if ($query->num_rows() < 1){
+ 				$jumlah_jabatan = 0;
+ 			}
+ 			elseif ($query->num_rows() > 0){	
+ 			$jumlah_jabatan = $query->num_rows(); 
+ 		}				
+ 			return $jumlah_jabatan;
+  }
+
 }
 ?>
