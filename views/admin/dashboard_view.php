@@ -2,13 +2,13 @@
           <!-- start:content -->
  <div id="content" class="kontent">               
                    
-       <div class="panel box-shadow-none content-header text-center">
+       <div class="panel box-shadow-none content-header" >
           <div class="panel-body">
             <div class="col-md-12">
-        <h3 class="animated fadeInDown" style="line-height:.4;"><span class="icon-home"></span>
+        <h3 class="animated fadeInDown"><span class="icon-home"></span>
           Beranda 
         </h3>
-              <h5 class="animated fadeInDown">
+              <h5 class="animated fadeInLeft">
                  Sistem Informasi Pegawai Enjiniring 
               </h5>
             </div>
@@ -29,18 +29,20 @@ if(empty($notifikasi)){
                           <h3 style="color:#ffffff;"><span class="fa fa-area-chart"></span>   Chart Data</h3>
                         </div>
                       </div>
-                          <div class="col-md-4">
+
+                      <div class="col-md-6">
+                          <div class="col-md-12">
                         			<div class="panel">
                              <div class="panel-heading-white panel-heading text-center border-none">
                                 <h5><span class="fa fa-pie-chart"></span> Status Pegawai PLNE</h5>
                               </div>
                               <div class="panel-body">
                                   <center>
-                                  <canvas class="pie-chart"></canvas>
+                                  <canvas class="doughnut-chart2"></canvas>
                                   <div class="col-md-12">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                       <h3><?php echo $jumlah;?></h3>
-                                      <p>Jumlah Pegawai</p>
+                                      <p>Jumlah Pegawai PLNE</p>
                                     </div>                                    
                                   </div>
                                   </center>
@@ -48,7 +50,7 @@ if(empty($notifikasi)){
                         		  </div>
                     		    </div>                         
 
-                    		<div class="col-md-4">
+                    		<div class="col-md-12">
                         			<div class="panel">
                              <div class="panel-heading-white panel-heading text-center border-none">
                                 <h5><span class="fa fa-pie-chart"></span> Pegawai PKWT</h5>
@@ -66,11 +68,13 @@ if(empty($notifikasi)){
                               		</div>
                         		</div>
                     		</div>
+                      </div>  
 
-                       <div class="col-md-4">
+                      <div class="col-md-6 right">
+                       <div class="col-md-12">
                               <div class="panel">
                              <div class="panel-heading-white panel-heading text-center border-none">
-                                <h5><span class="fa fa-pie-chart"></span> Pegawai PLNE / Bidang</h5>
+                                <h5><span class="fa fa-pie-chart"></span> Kompetensi PLNE</h5>
                               </div>
                               <div class="panel-body">
                                   <center>
@@ -85,6 +89,26 @@ if(empty($notifikasi)){
                                   </div>
                               </div>
                             </div> 
+                     
+                        <div class="col-md-12">
+                              <div class="panel">
+                             <div class="panel-heading-white panel-heading text-center border-none">
+                                <h5><span class="fa fa-pie-chart"></span> Jabatan PLNE</h5>
+                              </div>
+                              <div class="panel-body">
+                                  <center>
+                                  <canvas class="pie-chart"></canvas>
+                                  <div class="col-md-12">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h3><?php echo $jumlah_jabatan;?></h3>
+                                      <p>Total Jabatan</p>
+                                    </div>                                    
+                                  </div>
+                                  </center>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
 
                		</div>
                </div>                       

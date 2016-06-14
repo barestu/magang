@@ -18,8 +18,43 @@ class Dashboard extends CI_Controller {
  			'notifikasi' => $this->Dashboard_model->notifikasi(),
  			'organik' => $this->Dashboard_model->pegawai_organik(),
  			'pkwt' => $this->Dashboard_model->pegawai_pkwt(),
- 			'username' => $this->session->userdata('username'));
-		
+ 			//chart bidang
+ 			'direksi' => $this->Dashboard_model->direksi_bidang(),
+ 			'pemasaran' => $this->Dashboard_model->pemasaran_bidang(),
+ 			'pengembangan_usaha' => $this->Dashboard_model->pengembangan_usaha_bidang(),
+ 			'pengusahaan' => $this->Dashboard_model->pengusahaan_bidang(),
+ 			'pembangkit' => $this->Dashboard_model->pembangkit_bidang(),
+ 			't_dan_d' => $this->Dashboard_model->t_dan_d_bidang(),
+ 			'konstruksi' => $this->Dashboard_model->konstruksi_bidang(),
+ 			'keuangan' => $this->Dashboard_model->keuangan_bidang(),
+ 			'akuntansi' => $this->Dashboard_model->akutansi_bidang(),
+ 			'sdm' => $this->Dashboard_model->sdm_bidang(),
+ 			'umum' => $this->Dashboard_model->umum_bidang(),
+ 			'hukum' => $this->Dashboard_model->hukum_bidang(),
+ 			'humas' => $this->Dashboard_model->humas_bidang(),
+ 			'pengadaan' => $this->Dashboard_model->pengadaan_bidang(),
+ 			'audit_internal' => $this->Dashboard_model->audit_internal_bidang(),
+ 			'mmr' => $this->Dashboard_model->mmr_bidang(),
+ 			'pengawas_internal' => $this->Dashboard_model->pengawas_internal_bidang(),
+ 			'informasi_teknologi' => $this->Dashboard_model->informasi_teknologi_bidang(),
+ 			'jumlah_bidang' => $this->Dashboard_model->jumlah_bidang(),
+ 			//chart jabatan
+ 			'project_dir' => $this->Dashboard_model->project_dir(),
+ 			'project_manager' => $this->Dashboard_model->project_manager(),
+ 			'ptl' => $this->Dashboard_model->ptl(),
+ 			'civil_engineer' => $this->Dashboard_model->civil_engineer(),
+ 			'mechanical_engineer' => $this->Dashboard_model->mechanical_engineer(),
+ 			'i_c' => $this->Dashboard_model->i_c(),
+ 			'electrical_engineer' => $this->Dashboard_model->electrical_engineer(),
+ 			'qa_qc' => $this->Dashboard_model->qa_qc(),
+ 			'boiler' => $this->Dashboard_model->boiler(),
+ 			'hse' => $this->Dashboard_model->hse(),
+ 			'piping' => $this->Dashboard_model->piping(),
+ 			'geodetic' => $this->Dashboard_model->geodetic(),
+ 			'jumlah_jabatan' => $this->Dashboard_model->jumlah_jabatan(),
+ 			'username' => $this->session->userdata('username')
+ 			);
+
  		$this->load->view('admin/layout/wrapper',$isi);
 	}
 
