@@ -14,6 +14,7 @@
             </div>
           </div>
         </div>
+        
 <?php
  $jumlah = $organik + $pkwt;
 $notifikasi = $this->session->userdata('notifikasi');
